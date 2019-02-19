@@ -12,7 +12,7 @@ INSERT INTO agents (agentcode, agentname, workingarea, commission, phone, countr
                    (4, 'Ivan', 'Torento', 0.15, '008-22544166', ''),
                    (9, 'Benjamin', 'Hampshair', 0.11, '008-22536178', '');
                    
-INSERT INTO orders (ordernum, ordamount, advanceamount, custcode, agentcode, orddescription)
+INSERT INTO orders (ordnum, ordamount, advanceamount, custcode, agentcode, orddescription)
             VALUES (200100, 1000.00, 600.00, 13, 3, 'SOD'),
                    (200110, 3000.00, 500.00, 19, 10, 'SOD'),
                    (200107, 4500.00, 900.00, 7, 10, 'SOD'),
