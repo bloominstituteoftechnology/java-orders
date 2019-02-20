@@ -21,4 +21,50 @@ public class Order {
     @Column
     private String ordDescription;
 
+    public Order() {
+    }
+
+    public long getOrdNum() {
+        return ordNum;
+    }
+
+    public double getOrdAmount() {
+        return ordAmount;
+    }
+
+    public void setOrdAmount(double ordAmount) {
+        this.ordAmount = ordAmount;
+    }
+
+    public double getAdvanceAmount() {
+        return advanceAmount;
+    }
+
+    public void setAdvanceAmount(double advanceAmount) {
+        this.advanceAmount = advanceAmount;
+    }
+
+    public long getCustCode() {
+        return custCode;
+    }
+
+    public void setCustCode(long custCode) {
+        this.custCode = custCode;
+    }
+
+    public long getAgentCode() {
+        return agentCode;
+    }
+
+    public void setAgentCode(long agentCode) {
+        this.agentCode = agentCode;
+    }
+
+    public String getOrdDescription() {
+        return ordDescription;
+    }
+
+    public void setOrdDescription(String ordDescription) {
+        this.ordDescription = ordDescription;
+    }
 }
