@@ -31,7 +31,7 @@ public class Customer {
     private double outstandingAmt;
     @Column
     private String phone;
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "agentCode")
     @JsonIgnore
     private long agentCode;
