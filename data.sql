@@ -26,7 +26,7 @@ INSERT INTO orders (ordnum, ordamount, advanceamount, custcode, agentcode, ordde
                    (200121, 1500.00, 600.00, 8, 4, 'SOD'),
                    (200130, 2500.00, 400.00, 25, 11, 'SOD');
 
-INSERT INTO customers (custname, custcity, workingarea, custcountry, grade, openingamt, receiveamt, paymentamt, outstandingamt, phone, agentcode)
+INSERT INTO customers (custcode, custname, custcity, workingarea, custcountry, grade, openingamt, receiveamt, paymentamt, outstandingamt, phone, agentcode)
               VALUES (13, 'Holmes', 'London', 'London', 'UK', '2', 6000.00, 5000.00, 7000.00, 4000.00, 'BBBBBBB', 3),
                      (1, 'Micheal', 'New York', 'New York', 'USA', '2', 3000.00, 5000.00, 2000.00, 6000.00, 'CCCCCCC', 8),
                      (20, 'Albert', 'New York', 'New York', 'USA', '3', 5000.00, 7000.00, 6000.00, 6000.00, 'BBBBSBB', 8),
