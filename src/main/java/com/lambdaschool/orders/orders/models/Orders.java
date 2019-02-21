@@ -1,39 +1,47 @@
 package com.lambdaschool.orders.orders.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "orders")
-
 public class Orders {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (nullable = false)
+    @JsonIgnore
+    @Column(nullable = false)
     private long ORDNUM;
 
-    private double ORDERAMOUNT;
+    private double ORDAMOUNT;
     private double ADVANCEAMOUNT;
 
     @ManyToOne
     @JoinColumn(name = "CUSTCODE", nullable = false)
+    @JsonIgnore
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "AGENTCODE", nullable = false)
-    private Agents agents;
+    private Agents AGENTCODE;
 
     private String ORDDESCRIPTION;
+
 
     public Orders() {
     }
 
-    public double getORDERAMOUNT() {
-        return ORDERAMOUNT;
+    public long getORDERNUM() {
+        return ORDNUM;
     }
 
-    public void setORDERAMOUNT(double ORDERAMOUNT) {
-        this.ORDERAMOUNT = ORDERAMOUNT;
+    public double getORDAMOUNT() {
+        return ORDAMOUNT;
+    }
+
+    public void setORDAMOUNT(double ORDAMOUNT) {
+        this.ORDAMOUNT = ORDAMOUNT;
     }
 
     public double getADVANCEAMOUNT() {
@@ -44,20 +52,20 @@ public class Orders {
         this.ADVANCEAMOUNT = ADVANCEAMOUNT;
     }
 
-    public Customer getCustomer() {
+    public Customer getCUSTCODE() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCUSTCODE(Customer CUSTCODE) {
+        this.customer = CUSTCODE;
     }
 
-    public Agents getAgents() {
-        return agents;
+    public Agents getAGENTCODE() {
+        return AGENTCODE;
     }
 
-    public void setAgents(Agents agents) {
-        this.agents = agents;
+    public void setAGENTCODE(Agents AGENTCODE) {
+        this.AGENTCODE = AGENTCODE;
     }
 
     public String getORDDESCRIPTION() {

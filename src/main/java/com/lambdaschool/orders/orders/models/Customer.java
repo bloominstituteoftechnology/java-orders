@@ -1,5 +1,8 @@
 package com.lambdaschool.orders.orders.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +10,6 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Primary Key
-    @Column(nullable = false)
     private long CUSTCODE;
 
     @Column(nullable = false)
@@ -25,8 +27,8 @@ public class Customer {
 
 
     @ManyToOne
-    private long AGENTCODE;
-    @JoinColumn(name = "AGETCODE", nullable = false) // this is for the table
+    @JsonIgnore
+    @JoinColumn(name = "AGENTCODE", nullable = false) // this is for the table
     private Agents agents;
 
     public Customer() {
@@ -35,11 +37,6 @@ public class Customer {
     public long getCUSTCODE() {
         return CUSTCODE;
     }
-
-    public long getAGENTCODE() {
-        return AGENTCODE;
-    }
-
 
     public String getCUSTNAME() {
         return CUSTNAME;
@@ -121,4 +118,11 @@ public class Customer {
         this.PHONE = PHONE;
     }
 
+    public Agents getAGENTCODE() {
+        return agents;
+    }
+
+    public void setAGENTCODE(Agents AGENTCODE) {
+        this.agents = agents;
+    }
 }

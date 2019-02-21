@@ -2,7 +2,6 @@ package com.lambdaschool.orders.orders.models;
 
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name="agents")
@@ -22,12 +21,6 @@ public class Agents {
     public Agents() {
 
     }
-
-    @OneToMany()
-    private Set<Customer> customer;
-
-    @OneToMany()
-    private  Set<Orders> orders;
 
 
     public long getAGENTCODE() {
@@ -74,19 +67,4 @@ public class Agents {
         this.COUNTRY = COUNTRY;
     }
 
-    public Set<Customer> getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Set<Customer> customer) {
-        this.customer = customer;
-    }
-
-    public Set<Orders> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Set<Orders> orders) {
-        this.orders = orders;
-    }
 }
