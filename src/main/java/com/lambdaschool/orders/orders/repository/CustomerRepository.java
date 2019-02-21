@@ -20,4 +20,9 @@ public interface CustomerRepository extends JpaRepository <Customer, Long> {
 
     @Query(value = "SELECT CUSTOMER.CUSTCODE, ORDERS.ORDAMOUNT FROM ORDERS INNER JOIN CUSTOMER ON ORDERS.CUSTCODE = CUSTOMER.CUSTCODE WHERE CUSTOMER.CUSTCODE=:custcode", nativeQuery = true)
     List<Object[]> findAllOrderByCustomerId(@Param("custcode") Long custcode);
+
+    @Query(value = "SELECT AGENTS.AGENTNAME, CUSTOMER.CUSTNAME FROM AGENTS INNER JOIN CUSTOMER ON AGENTS.AGENTCODE=CUSTOMER.AGENTCODE ORDER BY AGENTS.AGENTNAME", nativeQuery = true)
+    List<Object[]> listAllAgentsWithCustomers();
+
+
 }

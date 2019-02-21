@@ -7,10 +7,7 @@ import com.lambdaschool.orders.orders.repository.CustomerRepository;
 import com.lambdaschool.orders.orders.repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,6 +43,16 @@ public class CustomerController {
     @GetMapping("/order/{custcode}")
     public  List<Object[]> findOrderbYCustomerId(@PathVariable Long custcode) {
         return custrepos.findAllOrderByCustomerId(custcode);
+    }
+
+    @GetMapping("/agents")
+    public List<Object[]> findAgentWithCustomer() {
+        return custrepos.listAllAgentsWithCustomers();
+    }
+
+    @DeleteMapping("/customer/{custcode}")
+    public void deleteCustomer(@PathVariable long custcode) {
+        custrepos.deleteById(custcode);
     }
 
 

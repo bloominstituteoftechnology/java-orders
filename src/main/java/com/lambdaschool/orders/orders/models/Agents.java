@@ -2,6 +2,7 @@ package com.lambdaschool.orders.orders.models;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="agents")
@@ -18,9 +19,15 @@ public class Agents {
     private String PHONE;
     private String COUNTRY;
 
+
+
+
+
     public Agents() {
 
     }
+
+
 
 
     public long getAGENTCODE() {

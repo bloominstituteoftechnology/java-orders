@@ -4,6 +4,7 @@ package com.lambdaschool.orders.orders.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer")
@@ -26,6 +27,7 @@ public class Customer {
     private String PHONE;
 
 
+
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "AGENTCODE", nullable = false) // this is for the table
@@ -33,6 +35,8 @@ public class Customer {
 
     public Customer() {
     }
+
+
 
     public long getCUSTCODE() {
         return CUSTCODE;
