@@ -26,7 +26,7 @@ public class Customer {
 
     @ManyToOne
     private long AGENTCODE;
-    @JoinColumn(name = "AGETCODE", nullable = false)
+    @JoinColumn(name = "AGETCODE", nullable = false) // this is for the table
     private Agents agents;
 
     public Customer() {
