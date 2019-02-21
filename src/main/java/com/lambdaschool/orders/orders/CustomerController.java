@@ -38,5 +38,15 @@ public class CustomerController {
         return custrepos.findAllOrder();
     }
 
+    @GetMapping("/name/{custname}")
+    public  List<Object[]> findOrderForCustomer(@PathVariable String custname) {
+        return custrepos.findAllOrderForCustomer(custname.toLowerCase());
+    }
+
+    @GetMapping("/order/{custcode}")
+    public  List<Object[]> findOrderbYCustomerId(@PathVariable Long custcode) {
+        return custrepos.findAllOrderByCustomerId(custcode);
+    }
+
 
 }
