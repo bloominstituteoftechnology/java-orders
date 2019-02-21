@@ -7,10 +7,12 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Primary Key
+    @Column(nullable = false)
     private long CUSTCODE;
 
-    private String CustName;
+    @Column(nullable = false)
     private String CUSTNAME;
+
     private String CUSTCITY;
     private String WORKINGAREA;
     private String CUSTCOUNTRY;
@@ -21,9 +23,14 @@ public class Customer {
     private double OUTSTANDINGAMT;
     private String PHONE;
 
+
     @ManyToOne
     private long AGENTCODE;
     @JoinColumn(name = "AGETCODE", nullable = false)
+    private Agents agents;
+
+    public Customer() {
+    }
 
     public long getCUSTCODE() {
         return CUSTCODE;
@@ -33,13 +40,6 @@ public class Customer {
         return AGENTCODE;
     }
 
-    public String getCustName() {
-        return CustName;
-    }
-
-    public void setCustName(String custName) {
-        CustName = custName;
-    }
 
     public String getCUSTNAME() {
         return CUSTNAME;

@@ -10,17 +10,25 @@ import java.util.Set;
 public class Agents {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //it will be primary key
-    private long AGENTCODE;
     @Column(nullable = false)
+    private long AGENTCODE;
+
     private String AGENTNAME;
     private String WORKINGAREA;
     private double COMMISSION;
     private String PHONE;
     private String COUNTRY;
 
-    @OneToMany
-    @JoinColumn(name = "AGENTCODE", nullable = false)
+    public Agents() {
+
+    }
+
+    @OneToMany()
     private Set<Customer> customer;
+
+    @OneToMany()
+    private  Set<Orders> orders;
+
 
     public long getAGENTCODE() {
         return AGENTCODE;
@@ -72,5 +80,13 @@ public class Agents {
 
     public void setCustomer(Set<Customer> customer) {
         this.customer = customer;
+    }
+
+    public Set<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Orders> orders) {
+        this.orders = orders;
     }
 }
