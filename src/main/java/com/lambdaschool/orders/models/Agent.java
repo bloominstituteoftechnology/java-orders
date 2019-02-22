@@ -8,7 +8,7 @@ public class Agent {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "agentcode", nullable = false)
-  private long id;
+  private Long id;
 
   @Column(name = "agentname")
   private String name;
@@ -22,7 +22,7 @@ public class Agent {
 
   public Agent() {}
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
