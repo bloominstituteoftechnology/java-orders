@@ -50,8 +50,8 @@ The table layouts are as follows
 
 Expose the following end points
 
-- [ ] /customer/order - Returns all customers with their orders
-- [ ] /customer/name/{custname} - Returns all orders for a particular based on name
+- [x] /customer/order - Returns all customers with their orders
+- [x] /customer/name/{custname} - Returns all orders for a particular based on name
 - [ ] /customer/order/{custcode} - Returns all orders for a particular customer based on custcode
 - [x] /agents - Returns all agents with their customers
 - [ ] /agents/orders - Return a list with the agents name and associated order number and order description

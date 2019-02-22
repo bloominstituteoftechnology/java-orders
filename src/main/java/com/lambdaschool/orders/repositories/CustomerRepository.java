@@ -14,4 +14,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     nativeQuery = true
   )
   List<Customer> agentCustomers();
+
+  Customer findByName(String name);
 }

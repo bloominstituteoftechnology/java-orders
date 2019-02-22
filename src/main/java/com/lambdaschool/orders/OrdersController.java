@@ -9,6 +9,7 @@ import com.lambdaschool.orders.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,7 +37,7 @@ public class OrdersController {
     customers = customers.stream()
       .map(customer -> {
         Set<Order> orders = new HashSet<>(
-          orderRepository.customerOrders()
+          orderRepository.customerOrders(customer.getId())
         );
         customer.setOrders(orders);
         return customer;
@@ -44,6 +45,13 @@ public class OrdersController {
       .collect(Collectors.toList());
 
     return customers;
+  }
+
+  @GetMapping("customer/name/{name}")
+  public List<Order> customerOrdersByName(@PathVariable String name) {
+    Customer customer = customerRepository.findByName(name);
+
+    return orderRepository.customerOrders(customer.getId());
   }
 
   @GetMapping("agents")
