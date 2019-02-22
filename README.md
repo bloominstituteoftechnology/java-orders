@@ -18,7 +18,7 @@ The table layouts are as follows
   * PHONE string
   * COUNTRY string
 
-- [ ] CUSTOMERS
+- [x] CUSTOMERS
   * CUSTCODE primary key, not null Long
   * CUSTNAME String, not null
   * CUSTCITY String
