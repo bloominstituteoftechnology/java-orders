@@ -10,7 +10,7 @@ Create a REST api server to store and read data from an in memory H2 database. T
 
 The table layouts are as follows
 
-- [ ] AGENTS
+- [x] AGENTS
   * AGENTCODE primary key, not null Long
   * AGENTNAME string
   * WORKINGAREA string
