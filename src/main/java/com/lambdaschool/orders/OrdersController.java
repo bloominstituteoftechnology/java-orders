@@ -8,10 +8,7 @@ import com.lambdaschool.orders.repositories.CustomerRepository;
 import com.lambdaschool.orders.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -88,5 +85,15 @@ public class OrdersController {
       });
 
     return agentsOrders;
+  }
+
+  @DeleteMapping("customer/{id}")
+  public void deleteCustomer(@PathVariable Long id) {
+    customerRepository.deleteById(id);
+  }
+
+  @DeleteMapping("agents/{id}")
+  public void deleteAgent(@PathVariable Long id) {
+    agentRepository.deleteById(id);
   }
 }

@@ -55,6 +55,6 @@ Expose the following end points
 - [x] /customer/order/{custcode} - Returns all orders for a particular customer based on custcode
 - [x] /agents - Returns all agents with their customers
 - [x] /agents/orders - Return a list with the agents name and associated order number and order description
-- [ ] /customer/{custcode} - Deletes a customer based off of their custcode and deletes all their associated orders
-- [ ] /agents/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
+- [x] /customer/{custcode} - Deletes a customer based off of their custcode and deletes all their associated orders
+- [x] /agents/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
 
