@@ -41,7 +41,7 @@ The table layouts are as follows
   * ORDDESCRIPTION
 
 
-- [ ] Create the entities needed to store this data
+- [x] Create the entities needed to store this data
 - [ ] and Load in the data (a prepopulated data.sql file is available for you to use)
  
 - [ ] Create a generic error html page to return when error 404 happens.
