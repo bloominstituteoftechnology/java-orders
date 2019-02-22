@@ -54,6 +54,11 @@ public class OrdersController {
     return orderRepository.customerOrders(customer.getId());
   }
 
+  @GetMapping("customer/order/{id}")
+  public List<Order> customerOrdersById(@PathVariable Long id) {
+    return orderRepository.customerOrders(id);
+  }
+
   @GetMapping("agents")
   public List<Agent> allAgents() {
     List<Agent> agents = agentRepository.findAll();
