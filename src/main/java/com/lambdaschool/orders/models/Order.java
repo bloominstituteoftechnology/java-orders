@@ -30,4 +30,50 @@ public class Order {
 
   @Column(name = "orddescription")
   private String description;
+
+  public Order() {}
+
+  public Long getId() {
+    return id;
+  }
+
+  public double getAmount() {
+    return amount;
+  }
+
+  public void setAmount(double amount) {
+    this.amount = amount;
+  }
+
+  public double getAdvanceAmount() {
+    return advanceAmount;
+  }
+
+  public void setAdvanceAmount(double advanceAmount) {
+    this.advanceAmount = advanceAmount;
+  }
+
+  public Customer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
+  }
+
+  public Agent getAgent() {
+    return agent;
+  }
+
+  public void setAgent(Agent agent) {
+    this.agent = agent;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
 }
