@@ -3,6 +3,7 @@ package com.lambdaschool.orders.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -43,6 +44,9 @@ public class Customer {
   @JoinColumn(name = "agentcode", nullable = false)
   @JsonIgnore
   private Agent agent;
+
+  @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "customer")
+  private Set<Order> orders;
 
   public Customer() {}
 
@@ -136,5 +140,13 @@ public class Customer {
 
   public void setAgent(Agent agent) {
     this.agent = agent;
+  }
+
+  public Set<Order> getOrders() {
+    return orders;
+  }
+
+  public void setOrders(Set<Order> orders) {
+    this.orders = orders;
   }
 }

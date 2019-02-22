@@ -42,11 +42,11 @@ The table layouts are as follows
 
 
 - [x] Create the entities needed to store this data
-- [ ] and Load in the data (a prepopulated data.sql file is available for you to use)
+- [x] and Load in the data (a prepopulated data.sql file is available for you to use)
  
-- [ ] Create a generic error html page to return when error 404 happens.
-- [ ] Create a different generic error html page to return when error 500 happens.
-- [ ] Create a different generic error html page to return when an error other than a 404 or 500 happens.
+- [x] Create a generic error html page to return when error 404 happens.
+- [x] Create a different generic error html page to return when error 500 happens.
+- [x] Create a different generic error html page to return when an error other than a 404 or 500 happens.
 
 Expose the following end points
 

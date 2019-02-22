@@ -1,6 +1,7 @@
 package com.lambdaschool.orders.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "agents")
@@ -19,6 +20,12 @@ public class Agent {
   private double commission;
   private String phone;
   private String country;
+
+  @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "agent")
+  private Set<Customer> customers;
+
+  @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "agent")
+  private Set<Order> orders;
 
   public Agent() {}
 
@@ -64,5 +71,21 @@ public class Agent {
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  public Set<Customer> getCustomers() {
+    return customers;
+  }
+
+  public void setCustomers(Set<Customer> customers) {
+    this.customers = customers;
+  }
+
+  public Set<Order> getOrders() {
+    return orders;
+  }
+
+  public void setOrders(Set<Order> orders) {
+    this.orders = orders;
   }
 }
