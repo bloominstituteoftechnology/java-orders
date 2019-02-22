@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -75,5 +73,20 @@ public class OrdersController {
       .collect(Collectors.toList());
 
     return agents;
+  }
+
+  @GetMapping("agents/orders")
+  public Map<String, List<Object[]>> agentsAndOrders() {
+    List<Agent> agents = agentRepository.findAll();
+
+    Map<String, List<Object[]>> agentsOrders = new HashMap<>();
+
+    agents.stream()
+      .forEach(agent -> {
+        List<Object[]> orders = agentRepository.agentOrders(agent.getId());
+        agentsOrders.put(agent.getName(), orders);
+      });
+
+    return agentsOrders;
   }
 }
