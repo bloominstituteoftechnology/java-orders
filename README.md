@@ -45,7 +45,7 @@ The table layouts are as follows
 
 
 * Create the entities needed to store this data
-* Load in the data. A file called data.sql would load the data using SQL. You need to modify it to load using a SeedData approach loading the data by creating objects.
+* A Java class called SeedData has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the class is the seed data to use!
  
 Expose the following end points
 
@@ -58,6 +58,6 @@ Expose the following end points
   * this should also delete the orders of that customer
 
 Stretch goals
-* /agents/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
+* /agent/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
 * Add appropriate error exception handling
 * Add appropriate logging for Tomcat, Spring, and custom logging for your project
