@@ -41,7 +41,7 @@ The table layouts are as follows
   * ADVANCEAMOUNT double
   * CUSTCODE Long foreign key (one customer to many orders) not null
   * AGENTCODE Long foreign key (one agent to many orders) not null
-  * ORDDESCRIPTION
+  * ORDDESCRIPTION String
 
 
 * Create the entities needed to store this data
