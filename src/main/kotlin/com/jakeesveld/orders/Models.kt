@@ -6,7 +6,7 @@ import javax.persistence.*
 data class Agent @JvmOverloads constructor(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val agentCode: Long,
+        val agentCode: Long? = null,
         @Column(nullable = false)
         var name: String? = "",
         var workingArea: String? = "",
@@ -19,7 +19,7 @@ data class Agent @JvmOverloads constructor(
 data class Customer @JvmOverloads constructor(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val custCode: Long,
+        val custCode: Long? = null,
         @Column(nullable = false)
         var name: String? = "",
         var city: String? = "",
@@ -33,21 +33,21 @@ data class Customer @JvmOverloads constructor(
         var phone: String? = "",
         @ManyToOne(cascade = [CascadeType.ALL])
         @JoinColumn(name = "agentCode")
-        var agentCode: Long
+        var agentCode: Agent
 )
 
 @Entity
 data class Order @JvmOverloads constructor(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val orderNum: Long,
+        val orderNum: Long? = null,
         var orderAmt: Double? = 0.0,
         var advanceAmt: Double? = 0.0,
         @ManyToOne(cascade = [CascadeType.ALL])
         @JoinColumn(name = "custCode")
-        val custCode: Long,
+        val custCode: Customer,
         @ManyToOne(cascade = [CascadeType.ALL])
         @JoinColumn(name = "agentCode")
-        val agentCode: Long,
+        val agentCode: Agent,
         var orderDesc: String? = ""
 )
