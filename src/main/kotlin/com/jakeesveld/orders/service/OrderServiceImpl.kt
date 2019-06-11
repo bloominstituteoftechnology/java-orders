@@ -3,7 +3,9 @@ package com.jakeesveld.orders.service
 import com.jakeesveld.orders.Order
 import com.jakeesveld.orders.OrdersRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
+@Service
 class OrderServiceImpl: OrderService {
 
     @Autowired

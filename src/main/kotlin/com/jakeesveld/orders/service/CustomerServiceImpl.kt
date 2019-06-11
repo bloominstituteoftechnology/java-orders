@@ -3,8 +3,10 @@ package com.jakeesveld.orders.service
 import com.jakeesveld.orders.Customer
 import com.jakeesveld.orders.CustomersRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 import javax.persistence.EntityNotFoundException
 
+@Service
 class CustomerServiceImpl: CustomerService {
 
     @Autowired
