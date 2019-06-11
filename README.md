@@ -43,6 +43,17 @@ The table layouts are as follows
   * AGENTCODE Long foreign key (one agent to many orders) not null
   * ORDDESCRIPTION String
 
+* Customers has a foreign key to Agents (AGENTCODE) this means:
+  * Customers has a Many to One relationship to Agents and
+  * Agents has a One to Many relationship to Customers
+
+* Orders has a foreign key to Agents (AGENTCODE)
+  * Orders has a Many to One relationship to Agents and
+  * Agents has a One to Many relationship to Orders
+
+* Orders has a foreign key to Customers (CUSTCODE) 
+  * Orders has a Many to One relationship to Customers and
+  * Customers has a One to Many relationship to Orders
 
 * Create the entities needed to store this data
 * A Java class called SeedData has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the class is the seed data to use!
