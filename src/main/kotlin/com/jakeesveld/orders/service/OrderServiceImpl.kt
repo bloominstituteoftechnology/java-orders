@@ -15,8 +15,9 @@ class OrderServiceImpl: OrderService {
         return orderList
     }
 
-    override fun findByCustomer(id: Long): Order {
+    override fun findByCustomer(id: Long): List<Order> {
         val orderList = mutableListOf<Order>()
-        
+        repo!!.findAll().iterator().forEachRemaining{order: Order? -> order?.let { orderList.add(it) }}
+        return orderList.filter { order -> order.custCode.custCode == id }
     }
 }

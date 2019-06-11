@@ -4,6 +4,6 @@ import com.jakeesveld.orders.Order
 
 interface OrderService {
     fun findAll(): List<Order>
-    fun findByCustomer(id: Long): Order
+    fun findByCustomer(id: Long): List<Order>
 
 }
