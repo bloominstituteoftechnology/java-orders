@@ -61,7 +61,7 @@ The table layouts are as follows
 Expose the following end points
 
 * /customer/order - Returns all customers with their orders
-* /customer/name/{custname} - Returns all orders for a particular based on name
+* /customer/name/{custname} - Returns all orders for a particular customer based on name
 
 * /data/customer/new - Adds a new customer
 * /data/customer/update/{custcode} - Updates the customer based off of custcode
