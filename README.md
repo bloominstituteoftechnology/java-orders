@@ -40,16 +40,11 @@ The table layouts are as follows
   * ORDAMOUNT double
   * ADVANCEAMOUNT double
   * CUSTCODE Long foreign key (one customer to many orders) not null
-  * AGENTCODE Long foreign key (one agent to many orders) not null
   * ORDDESCRIPTION String
 
 * Customers has a foreign key to Agents (AGENTCODE) this means:
   * Customers has a Many to One relationship to Agents and
   * Agents has a One to Many relationship to Customers
-
-* Orders has a foreign key to Agents (AGENTCODE)
-  * Orders has a Many to One relationship to Agents and
-  * Agents has a One to Many relationship to Orders
 
 * Orders has a foreign key to Customers (CUSTCODE) 
   * Orders has a Many to One relationship to Customers and
@@ -60,13 +55,13 @@ The table layouts are as follows
  
 Expose the following end points
 
-* /customer/order - Returns all customers with their orders
-* /customer/name/{custname} - Returns all orders for a particular customer based on name
+* GET /customer/order - Returns all customers with their orders
+* GET /customer/name/{custname} - Returns all orders for a particular customer based on name
 
-* /data/customer/new - Adds a new customer
-* /data/customer/update/{custcode} - Updates the customer based off of custcode
-* /data/customer/delete/{custcode} - Deletes the customer based off of custcode
+* POST /data/customer/new - Adds a new customer
+* PUT /data/customer/update/{custcode} - Updates the customer based off of custcode
+* DELETE /data/customer/delete/{custcode} - Deletes the customer based off of custcode
   * this should also delete the orders of that customer
 
 Stretch goals
-* /agent/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
+* /agent/{agentcode} - Deletes an agent if they are not assigned to a customer or order
