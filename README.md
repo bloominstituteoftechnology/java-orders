@@ -61,7 +61,30 @@ Expose the following end points
 * POST /data/customer/new - Adds a new customer
   * You can use the following as test data
   
-Coming soon!!!
+```
+{
+    "custname": "John",
+    "custcity": "Port Angeles",
+    "workingarea": "Washington",
+    "custcountry": "USA",
+    "grade": "1",
+    "openingamt": 70000,
+    "receiveamt": 7000,
+    "paymentamt": 777,
+    "outstandingamt": 0,
+    "phone": "5555555555",
+    "agent": {
+        "agentcode": 8
+    },
+    "orders": [
+        {
+            "ordamount": 7777,
+            "advanceamount": 777,
+            "ordersescription": "SOD"
+        }
+    ]
+}
+```
 
 * PUT /data/customer/update/{custcode} - Updates the customer based off of custcode
 * DELETE /data/customer/delete/{custcode} - Deletes the customer based off of custcode
