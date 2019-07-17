@@ -59,6 +59,32 @@ Expose the following end points
 * GET /customer/name/{custname} - Returns all orders for a particular customer based on name
 
 * POST /data/customer/new - Adds a new customer
+  * You can use the following as test data
+  
+ {
+    "custname": "John",
+    "custcity": "Port Angeles",
+    "workingarea": "Washington",
+    "custcountry": "USA",
+    "grade": "1",
+    "openingamt": 70000,
+    "receiveamt": 7000,
+    "paymentamt": 777,
+    "outstandingamt": 0,
+    "phone": "5555555555",
+    "agent": {
+        "agentcode": 8
+    },
+    "orders": [
+        {
+            "ordamount": 7777,
+            "advanceamount": 777,
+            "ordersescription": "SOD"
+        }
+    ]
+}
+
+
 * PUT /data/customer/update/{custcode} - Updates the customer based off of custcode
 * DELETE /data/customer/delete/{custcode} - Deletes the customer based off of custcode
   * this should also delete the orders of that customer
