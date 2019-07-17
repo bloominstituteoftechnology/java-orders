@@ -70,5 +70,3 @@ Expose the following end points
 
 Stretch goals
 * /agent/{agentcode} - Deletes an agent if they are not assigned to a customer or order (Stretch Goal)
-* Add appropriate error exception handling
-* Add appropriate logging for Tomcat, Spring, and custom logging for your project
