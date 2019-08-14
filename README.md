@@ -80,7 +80,7 @@ Expose the following end points
         {
             "ordamount": 7777,
             "advanceamount": 777,
-            "ordersescription": "SOD"
+            "orddescription": "SOD"
         }
     ]
 }
