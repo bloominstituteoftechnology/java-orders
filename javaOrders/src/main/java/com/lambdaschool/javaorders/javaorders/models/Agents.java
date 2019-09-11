@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "agents")
-public class Agent
+public class Agents
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class Agent
     @Column(unique = true, nullable = false)
     private String agentName;
     private String workingArea;
-    private double comission;
+    private double commission;
     private String phone;
     private String country;
 
@@ -26,23 +26,23 @@ public class Agent
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     @JsonIgnoreProperties("agents")
-    private List<Customer> customers = new ArrayList<>();
+    private List<Customers> customers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "agent",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties("agents")
-    private List<Order> orders = new ArrayList<>();
+//    @OneToMany(mappedBy = "agent",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true)
+//    @JsonIgnoreProperties("agents")
+//    private List<Orders> orders = new ArrayList<>();
 
-    public Agent()
+    public Agents()
     {
     }
 
-    public Agent(String agentName, String workingArea, double comission, String phone, String country)
+    public Agents(String agentName, String workingArea, double commission, String phone, String country)
     {
         this.agentName = agentName;
         this.workingArea = workingArea;
-        this.comission = comission;
+        this.commission = commission;
         this.phone = phone;
         this.country = country;
     }
@@ -77,14 +77,14 @@ public class Agent
         this.workingArea = workingArea;
     }
 
-    public double getComission()
+    public double getCommission()
     {
-        return comission;
+        return commission;
     }
 
-    public void setComission(double comission)
+    public void setCommission(double commission)
     {
-        this.comission = comission;
+        this.commission = commission;
     }
 
     public String getPhone()
@@ -107,12 +107,12 @@ public class Agent
         this.country = country;
     }
 
-    public List<Customer> getCustomers()
+    public List<Customers> getCustomers()
     {
         return customers;
     }
 
-    public void setCustomers(List<Customer> customers)
+    public void setCustomers(List<Customers> customers)
     {
         this.customers = customers;
     }
