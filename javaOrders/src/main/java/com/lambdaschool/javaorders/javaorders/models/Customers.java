@@ -21,8 +21,10 @@ public class Customers
     private String grade;
     private double openingAmt;
     private double receiveAmt;
+    private double payment;
     private double outstandingAmt;
     private String phone;
+    private long agentCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "agentCode")
@@ -39,7 +41,8 @@ public class Customers
     {
     }
 
-    public Customers(String custName, String custCity, String workingArea, String custCountry, String grade, double openingAmt, double receiveAmt, double outstandingAmt, String phone, List<Agents> agents, List<Orders> orders)
+    public Customers(String custName, String custCity, String workingArea, String custCountry, String grade,
+                     double openingAmt, double receiveAmt, double payment, double outstandingAmt, String phone,  List<Agents> agents)
     {
         this.custName = custName;
         this.custCity = custCity;
@@ -48,129 +51,9 @@ public class Customers
         this.grade = grade;
         this.openingAmt = openingAmt;
         this.receiveAmt = receiveAmt;
+        this.payment = payment;
         this.outstandingAmt = outstandingAmt;
         this.phone = phone;
         this.agents = agents;
-        this.orders = orders;
-    }
-
-    public long getCustCode()
-    {
-        return custCode;
-    }
-
-    public void setCustCode(long custCode)
-    {
-        this.custCode = custCode;
-    }
-
-    public String getCustName()
-    {
-        return custName;
-    }
-
-    public void setCustName(String custName)
-    {
-        this.custName = custName;
-    }
-
-    public String getCustCity()
-    {
-        return custCity;
-    }
-
-    public void setCustCity(String custCity)
-    {
-        this.custCity = custCity;
-    }
-
-    public String getWorkingArea()
-    {
-        return workingArea;
-    }
-
-    public void setWorkingArea(String workingArea)
-    {
-        this.workingArea = workingArea;
-    }
-
-    public String getCustCountry()
-    {
-        return custCountry;
-    }
-
-    public void setCustCountry(String custCountry)
-    {
-        this.custCountry = custCountry;
-    }
-
-    public String getGrade()
-    {
-        return grade;
-    }
-
-    public void setGrade(String grade)
-    {
-        this.grade = grade;
-    }
-
-    public double getOpeningAmt()
-    {
-        return openingAmt;
-    }
-
-    public void setOpeningAmt(double openingAmt)
-    {
-        this.openingAmt = openingAmt;
-    }
-
-    public double getReceiveAmt()
-    {
-        return receiveAmt;
-    }
-
-    public void setReceiveAmt(double receiveAmt)
-    {
-        this.receiveAmt = receiveAmt;
-    }
-
-    public double getOutstandingAmt()
-    {
-        return outstandingAmt;
-    }
-
-    public void setOutstandingAmt(double outstandingAmt)
-    {
-        this.outstandingAmt = outstandingAmt;
-    }
-
-    public String getPhone()
-    {
-        return phone;
-    }
-
-    public void setPhone(String phone)
-    {
-        this.phone = phone;
-    }
-
-    public List<Agents> getAgents()
-    {
-        return agents;
-    }
-
-    public void setAgents(List<Agents> agents)
-    {
-        this.agents = agents;
-    }
-
-    public List<Orders> getOrders()
-    {
-        return orders;
-    }
-
-    public void setOrders(List<Orders> orders)
-    {
-        this.orders = orders;
     }
 }

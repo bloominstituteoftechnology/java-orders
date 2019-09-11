@@ -13,27 +13,27 @@ public class Orders
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long orderNum;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private double ordAmount;
     private double advanceAmount;
     private String ordDescription;
-    private long custCode;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "custCode")
     @JsonIgnoreProperties("orders")
     private List<Customers> customers = new ArrayList<>();
 
+
     public Orders()
     {
     }
 
-    public Orders(double ordAmount, double advanceAmount, String ordDescription, long custCode, List<Customers> customers)
+    public Orders(double ordAmount, double advanceAmount, String ordDescription, List<Customers> customers)
     {
         this.ordAmount = ordAmount;
         this.advanceAmount = advanceAmount;
         this.ordDescription = ordDescription;
-        this.custCode = custCode;
         this.customers = customers;
     }
 
@@ -75,16 +75,6 @@ public class Orders
     public void setOrdDescription(String ordDescription)
     {
         this.ordDescription = ordDescription;
-    }
-
-    public long getCustCode()
-    {
-        return custCode;
-    }
-
-    public void setCustCode(long custCode)
-    {
-        this.custCode = custCode;
     }
 
     public List<Customers> getCustomers()
