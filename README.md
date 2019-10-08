@@ -53,7 +53,7 @@ The table layouts are as follows
 * Create the entities needed to store this data
 * A Java class called SeedData has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the class is the seed data to use!
  
-Expose the following end points
+Expose the following endpoints
 
 * GET /customer/order - Returns all customers with their orders
 * GET /customer/name/{custname} - Returns all orders for a particular customer based on name
@@ -100,5 +100,5 @@ You can use this data to test changing any customer's phone number
   * this should also delete the orders of that customer
 
 Stretch goals
-* /agent/{agentcode} - Deletes an agent if they are not assigned to a customer or order
-* Have PUT /data/customer/update/{custcode} add any orders sent to the end point
+* DELETE /agent/{agentcode} - Deletes an agent if they are not assigned to a customer
+* PUT /data/customer/update/{custcode} add any orders sent to the endpoint
