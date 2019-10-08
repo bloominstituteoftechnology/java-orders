@@ -26,7 +26,7 @@ public class SeedData implements CommandLineRunner
     }
 
     @Override
-    public void run(String... args) throws Exception
+    public void run(String[] args) throws Exception
     {
         Agents a01 = new Agents("Ramasundar", "Bangalore", 0.15, "077-25814763", "");
         Agents a02 = new Agents("Alex ", "London", 0.13, "075-12458969", "");
@@ -59,7 +59,7 @@ public class SeedData implements CommandLineRunner
         Customers c16 = new Customers("Shilton", "Torento", "Torento", "Canada", "1", 10000.00, 7000.00, 6000.00, 11000.00, "DDDDDDD", a04);
         Customers c17 = new Customers("Charles", "Hampshair", "Hampshair", "UK", "3", 6000.00, 4000.00, 5000.00, 5000.00, "MMMMMMM", a09);
         Customers c18 = new Customers("Srinivas", "Bangalore", "Bangalore", "India", "2", 8000.00, 4000.00, 3000.00, 9000.00, "AAAAAAB", a07);
-        Customers c19 = new Customers("Steven", "San Jose", "San Jose", "USA", "1", 5000.00, 7000.00, 9000.00, 3000.00, "KRFYGJK", a12);
+        Customers c19 = new Customers("Steven", "San Jose", "San Jose", "USA", "1", 5000.00, 7000.00, 9000.00, 3000.00, "KRFYGJK", a10);
         Customers c20 = new Customers("Karolina", "Torento", "Torento", "Canada", "1", 7000.00, 7000.00, 9000.00, 5000.00, "HJKORED", a04);
         Customers c21 = new Customers("Martin", "Torento", "Torento", "Canada", "2", 8000.00, 7000.00, 7000.00, 8000.00, "MJYURFD", a04);
         Customers c22 = new Customers("Ramesh", "Mumbai", "Mumbai", "India", "3", 8000.00, 7000.00, 3000.00, 12000.00, "Phone No", a02);
