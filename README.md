@@ -56,7 +56,6 @@ The table layouts are as follows
 Expose the following endpoints
 
 * GET /customer/order - Returns all customers with their orders
-* GET /customer/name/{custname} - Returns all orders for a particular customer based on name
 
 * POST /customer/new - Adds a new customer including any new orders
   * You can use the following as test data
