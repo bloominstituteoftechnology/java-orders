@@ -86,6 +86,31 @@ Expose the following endpoints
 ```
 
 * PUT /customer/update/{custcode} - Updates the customer based off of custcode. Does not have to do anything with Orders!
+  * You can use the following as test data
+  
+```
+{
+        "custcode": 14,
+        "custname": "Micheal The Great",
+        "custcity": "Seattle",
+        "workingarea": "Washington",
+        "custcountry": "USA",
+        "grade": "2",
+        "openingamt": 3000.0,
+        "receiveamt": 5000.0,
+        "paymentamt": 2000.0,
+        "outstandingamt": 6000.0,
+        "phone": "CCCCCCC",
+        "agent": {
+            "agentcode": 8,
+            "agentname": "Subbarao",
+            "workingarea": "Bangalore",
+            "commission": 0.14,
+            "phone": "077-12346674",
+            "country": ""
+        }
+}
+```
 
 * DELETE /customer/delete/{custcode} - Deletes the customer based off of custcode
   * this should also delete the orders of that customer
