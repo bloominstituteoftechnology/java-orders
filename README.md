@@ -87,14 +87,6 @@ Expose the following endpoints
 
 * PUT /customer/update/{custcode} - Updates the customer based off of custcode. Does not have to do anything with Orders!
 
-You can use this data to test changing any customer's phone number
-
-```
-{
-    "phone": "5551234567"
-}
-```
-
 * DELETE /customer/delete/{custcode} - Deletes the customer based off of custcode
   * this should also delete the orders of that customer
 
