@@ -29,9 +29,9 @@ public class SeedData implements CommandLineRunner
     public void run(String[] args) throws Exception
     {
         Agents a01 = new Agents("Ramasundar", "Bangalore", 0.15, "077-25814763", "");
-        Agents a02 = new Agents("Alex ", "London", 0.13, "075-12458969", "");
+        Agents a02 = new Agents("Alex", "London", 0.13, "075-12458969", "");
         Agents a03 = new Agents("Alford", "New York", 0.12, "044-25874365", "");
-        Agents a04 = new Agents("Ravi Kumar", "Bangalore", 0.15, "077-45625874", "");
+        Agents a04 = new Agents("Ravi", "Bangalore", 0.15, "077-45625874", "");
         Agents a05 = new Agents("Santakumar", "Chennai", 0.14, "007-22388644", "");
         Agents a06 = new Agents("Lucida", "San Jose", 0.12, "044-52981425", "");
         Agents a07 = new Agents("Anderson", "Brisban", 0.13, "045-21447739", "");
