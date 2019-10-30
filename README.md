@@ -51,70 +51,14 @@ The table layouts are as follows
   * Customers has a One to Many relationship to Orders
 
 * Create the entities needed to store this data
-* A Java class called SeedData has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the class is the seed data to use!
+* A data.sql file has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the file is the seed data to use!
  
 Expose the following endpoints
 
-* GET /customer/order - Returns all customers with their orders
+* GET /customers/orders - Returns all customers with their orders
+* GET /customers/customer/{id} - Returns the customer and their orders with the given customer id
+* GET /agents/agent/{id} - Returns the agent and their customers with the given agent id
+* GET /customers/namelike/{likename} - Returns all customers and their orders with a customer name containing the given substring
+* GET /orders/advanceamount - returns all orders with their customers that has a advanceamount greater than 0.
 
-* POST /customer/new - Adds a new customer including any new orders
-  * You can use the following as test data
-  
-```
-{
-    "custname": "John",
-    "custcity": "Port Angeles",
-    "workingarea": "Washington",
-    "custcountry": "USA",
-    "grade": "1",
-    "openingamt": 70000,
-    "receiveamt": 7000,
-    "paymentamt": 777,
-    "outstandingamt": 0,
-    "phone": "5555555555",
-    "agent": {
-        "agentcode": 8
-    },
-    "orders": [
-        {
-            "ordamount": 7777,
-            "advanceamount": 777,
-            "orddescription": "SOD"
-        }
-    ]
-}
-```
 
-* PUT /customer/update/{custcode} - Updates the customer based off of custcode. Does not have to do anything with Orders!
-  * You can use the following as test data
-  
-```
-{
-        "custcode": 14,
-        "custname": "Micheal The Great",
-        "custcity": "Seattle",
-        "workingarea": "Washington",
-        "custcountry": "USA",
-        "grade": "2",
-        "openingamt": 3000.0,
-        "receiveamt": 5000.0,
-        "paymentamt": 2000.0,
-        "outstandingamt": 6000.0,
-        "phone": "CCCCCCC",
-        "agent": {
-            "agentcode": 8,
-            "agentname": "Subbarao",
-            "workingarea": "Bangalore",
-            "commission": 0.14,
-            "phone": "077-12346674",
-            "country": ""
-        }
-}
-```
-
-* DELETE /customer/delete/{custcode} - Deletes the customer based off of custcode
-  * this should also delete the orders of that customer
-
-Stretch goals
-* DELETE /agent/{agentcode} - Deletes an agent if they are not assigned to a customer
-* PUT /data/customer/update/{custcode} - update this endpoint to add any orders sent to the endpoint
