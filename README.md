@@ -59,6 +59,6 @@ Expose the following endpoints
 * GET /customers/customer/{id} - Returns the customer and their orders with the given customer id
 * GET /agents/agent/{id} - Returns the agent and their customers with the given agent id
 * GET /customers/namelike/{likename} - Returns all customers and their orders with a customer name containing the given substring
-* GET /orders/advanceamount - returns all orders with their customers that has a advanceamount greater than 0.
+* GET /orders/advanceamount - returns all orders with their customers that have an advanceamount greater than 0.
 
 
