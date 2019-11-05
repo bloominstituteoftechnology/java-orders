@@ -42,6 +42,14 @@ The table layouts are as follows
   * CUSTCODE Long foreign key (one customer to many orders) not null
   * ORDDESCRIPTION String
 
+* PAYMENTS
+  PAYMENTID primary key, not null long
+  TYPE String not null
+  
+* ORDERSPAYMENTS (join table)
+  * ORDERNUM foreign key to ORDERS
+  * PAYMENTID foreign key to PAYMENTS. 
+
 * Customers has a foreign key to Agents (AGENTCODE) this means:
   * Customers has a Many to One relationship to Agents and
   * Agents has a One to Many relationship to Customers
@@ -49,6 +57,10 @@ The table layouts are as follows
 * Orders has a foreign key to Customers (CUSTCODE) 
   * Orders has a Many to One relationship to Customers and
   * Customers has a One to Many relationship to Orders
+
+* Orders has a many to many relationship with payments
+  * multiple orders can use the same payment type and an order can have multiple payment types.
+  * For example you can use both gift card and credit card to pay for an order.
 
 * Create the entities needed to store this data
 * A data.sql file has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the file is the seed data to use!
