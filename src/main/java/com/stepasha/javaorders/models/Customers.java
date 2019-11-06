@@ -1,10 +1,13 @@
 package com.stepasha.javaorders.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "costumers")
 public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +26,12 @@ public class Customers {
     private double paymentamt;
     private double outstandingamt;
     private String phone;
+
+    @OneToMany(mappedBy = "customer",
+    cascade = CascadeType.ALL,
+    orphanRemoval = true)
+    @JsonIgnoreProperties("customer")
+    private List<Agents> agents = new ArrayList<>();
 
 
 
