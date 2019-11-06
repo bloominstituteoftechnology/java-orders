@@ -40,11 +40,11 @@ The table layouts are as follows
   * ORDAMOUNT double
   * ADVANCEAMOUNT double
   * CUSTCODE Long foreign key (one customer to many orders) not null
-  * ORDDESCRIPTION String
+  * ORDERDESCRIPTION String
 
 * PAYMENTS
-  PAYMENTID primary key, not null long
-  TYPE String not null
+  * PAYMENTID primary key, not null long
+  * TYPE String not null
   
 * ORDERSPAYMENTS (join table)
   * ORDERNUM foreign key to ORDERS
@@ -72,4 +72,7 @@ Expose the following endpoints
 * GET /customers/namelike/{likename} - Returns all customers and their orders with a customer name containing the given substring
 * GET /agents/agent/{id} - Returns the agent and their customers with the given agent id
 * GET /orders/order/{id} - Returns the order and its customer with the given order number
+
+## Stretch Goal
+
 * GET /orders/advanceamount - returns all orders with their customers that have an advanceamount greater than 0.
