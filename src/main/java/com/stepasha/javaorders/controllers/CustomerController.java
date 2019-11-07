@@ -4,13 +4,15 @@ package com.stepasha.javaorders.controllers;
 import com.stepasha.javaorders.models.Customers;
 import com.stepasha.javaorders.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -41,5 +43,21 @@ public class CustomerController {
     public ResponseEntity<?> getCustomersByNameLike(@PathVariable String namelike) {
         List<Customers> myCustomers = customerService.getCustomerByNameLike(namelike);
         return new ResponseEntity<>(myCustomers, HttpStatus.OK);
+    }
+    //CREATE
+    //http://localhost:0138/customers/customers
+    @PostMapping(value = "/customers",
+    consumes = {"application/json"})
+    public ResponseEntity<?> addNewCustomer(
+            @Valid
+            @RequestBody Customers newCustomer){
+        newCustomer = customerService.save(newCustomer);
+        HttpHeaders responseHeader = new HttpHeaders();
+        URI newCustomerUri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(newCustomer.getCustcode())
+                .toUri();
+        responseHeader.setLocation(newCustomerUri);
+        return new ResponseEntity<>(null, responseHeader, HttpStatus.CREATED);
     }
 }
