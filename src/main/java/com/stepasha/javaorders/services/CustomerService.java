@@ -10,10 +10,6 @@ public interface CustomerService {
 
     Customers findCustomerById(long id);
 
-   // Customers findCustomerById(String name);
-
-   // List<Customers> findByState(String state);
-
 
     List<Customers> getCustomerByNameLike(String likename);
 

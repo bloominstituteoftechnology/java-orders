@@ -19,6 +19,7 @@ public class Agents {
     private String phone;
     private String country;
 
+    //one agent to many customers. Thats where the tying together happens(relationship) always makes a list of what ever many is refferring to
     @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("agent")
     private List<Customers> customers = new ArrayList<>();

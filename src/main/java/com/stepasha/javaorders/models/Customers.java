@@ -25,11 +25,13 @@ public class Customers {
     private String phone;
 
     //many to one
+    //many costumers belong to one agent
     @ManyToOne
     @JoinColumn(name = "agentcode", nullable = false)
     @JsonIgnoreProperties("customers")
     private Agents agent;
 
+    //one customer could have many orders
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("customer")
     private List<Orders> orders = new ArrayList<>();

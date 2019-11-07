@@ -16,6 +16,7 @@ public class Orders {
     private double ordamount;
     private double advanceamount;
 
+    //many orders to one customer. ignoring agent because he cant place orders, and orders because thats what we already are listing
     @ManyToOne
     @JoinColumn(name = "custcode")
     @JsonIgnoreProperties({"agent", "orders"})
@@ -23,6 +24,7 @@ public class Orders {
 
     private String orderdescription;
 
+    // many to many here because any order can accept any payment
     @ManyToMany(mappedBy = "orders")
     private List<Payments> payments = new ArrayList<>();
 

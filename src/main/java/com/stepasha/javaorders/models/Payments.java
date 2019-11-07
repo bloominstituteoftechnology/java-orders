@@ -30,6 +30,8 @@ public class Payments {
 
     public void setType(String type) { this.type = type; }
 
+
+    //joining two tables to get the payment and the order that goes with it
     @ManyToMany
     @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "paymentid"), inverseJoinColumns = @JoinColumn(name = "ordnum"))
     List<Orders> orders = new ArrayList<>();
