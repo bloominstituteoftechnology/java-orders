@@ -4,4 +4,6 @@ import com.stepasha.javaorders.models.Agents;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AgentsRepository extends CrudRepository<Agents, Long> {
+    // TODO 1
+    Agents findById(long agentcode);
 }
