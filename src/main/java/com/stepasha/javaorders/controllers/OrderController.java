@@ -28,6 +28,7 @@ public class OrderController {
         return new ResponseEntity<>(myOrder, HttpStatus.OK);
     }
 
+    //http://localhost:0138/orders//advanceamount/100
     @GetMapping(value = "/advanceamount/{advanceamount}", produces = {"application/json"})
     public ResponseEntity<?> getAllOrdersFilterByAdvanceAmount(@PathVariable double advanceamount){
         List<Orders> allOrders = orderService.findAll();
