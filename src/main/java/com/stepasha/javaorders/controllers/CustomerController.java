@@ -36,6 +36,10 @@ public class CustomerController {
         Customers myCustomers = customerService.findCustomerById(id);
         return new ResponseEntity<>(myCustomers, HttpStatus.OK);
     }
-
-
+    // http://localhost:0138/customers/namelike/{likename}
+    @GetMapping(value = "/namelike/{namelike}", produces = {"application/json"})
+    public ResponseEntity<?> getCustomersByNameLike(@PathVariable String namelike) {
+        List<Customers> myCustomers = customerService.getCustomerByNameLike(namelike);
+        return new ResponseEntity<>(myCustomers, HttpStatus.OK);
+    }
 }
