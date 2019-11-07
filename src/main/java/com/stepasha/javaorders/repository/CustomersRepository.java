@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface CustomersRepository extends CrudRepository<Customers, Long> {
 
-    ArrayList<Customers> findByStateIgnoringCase(String state);
+//    ArrayList<Customers> findByStateIgnoringCase(String state);
 
-    ArrayList<Customers> findByNameContainingIgnoringCase(String likename);
+    ArrayList<Customers> findByCustnameContaining(String namelike);
 }

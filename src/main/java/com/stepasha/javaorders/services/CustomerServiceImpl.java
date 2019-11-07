@@ -14,6 +14,7 @@ public class CustomerServiceImpl implements CustomerService{
     @Autowired
     private CustomersRepository custRepo;
 
+
     @Override
     public List<Customers> findAll() {
         List<Customers> list = new ArrayList<>();
@@ -27,7 +28,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public List<Customers> findCustomerByNameLike(String thename) {
-        return custRepo.findByNameContainingIgnoringCase(thename);
+    public List<Customers> getCustomerByNameLike(String likename) {
+        return custRepo.findByCustnameContaining(likename);
     }
 }

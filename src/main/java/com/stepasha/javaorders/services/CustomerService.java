@@ -14,6 +14,7 @@ public interface CustomerService {
 
    // List<Customers> findByState(String state);
 
-    List<Customers> findCustomerByNameLike(String thename);
+
+    List<Customers> getCustomerByNameLike(String likename);
 
 }

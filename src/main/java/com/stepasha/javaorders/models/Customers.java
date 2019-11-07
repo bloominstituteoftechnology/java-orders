@@ -1,5 +1,4 @@
 package com.stepasha.javaorders.models;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -9,14 +8,12 @@ import java.util.List;
 @Entity
 @Table(name = "customers")
 public class Customers {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long custcode;
-
-    @Column(unique = true,
-            nullable = false)
+    @Column(nullable = false)
     private String custname;
-
     private String custcity;
     private String workingarea;
     private String custcountry;
@@ -27,21 +24,30 @@ public class Customers {
     private double outstandingamt;
     private String phone;
 
+    //many to one
     @ManyToOne
-    @JoinColumn(name ="agentcode", nullable = false)
+    @JoinColumn(name = "agentcode", nullable = false)
     @JsonIgnoreProperties("customers")
-    private Agents agents;
+    private Agents agent;
 
-    //pulls in the list from Order
-    @OneToMany(mappedBy = "customer",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties("customers")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("customer")
     private List<Orders> orders = new ArrayList<>();
 
+    public Customers() {
+    }
 
-
-    public Customers(String custname, String custcity, String workingarea, String custcountry, String grade, double openingamt, double receiveamt, double paymentamt, double outstandingamt, String phone) {
+    public Customers(String custname,
+                    String custcity,
+                    String workingarea,
+                    String custcountry,
+                    String grade,
+                    double openingamt,
+                    double receiveamt,
+                    double paymentamt,
+                    double outstandingamt,
+                    String phone,
+                    Agents agent) {
         this.custname = custname;
         this.custcity = custcity;
         this.workingarea = workingarea;
@@ -52,8 +58,16 @@ public class Customers {
         this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
+        this.agent = agent;
     }
-    public Customers(){}
+
+    public long getCustcode() {
+        return custcode;
+    }
+
+    public void setCustcode(long custcode) {
+        this.custcode = custcode;
+    }
 
     public String getCustname() {
         return custname;
@@ -133,5 +147,21 @@ public class Customers {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Agents getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agents agent) {
+        this.agent = agent;
+    }
+
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
     }
 }
