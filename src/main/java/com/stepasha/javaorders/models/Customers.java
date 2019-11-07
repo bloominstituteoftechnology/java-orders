@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "costumers")
+@Table(name = "customers")
 public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,11 +27,17 @@ public class Customers {
     private double outstandingamt;
     private String phone;
 
+    @ManyToOne
+    @JoinColumn(name ="agentcode", nullable = false)
+    @JsonIgnoreProperties("customers")
+    private Agents agents;
+
+    //pulls in the list from Order
     @OneToMany(mappedBy = "customer",
-    cascade = CascadeType.ALL,
-    orphanRemoval = true)
-    @JsonIgnoreProperties("customer")
-    private List<Agents> agents = new ArrayList<>();
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    @JsonIgnoreProperties("customers")
+    private List<Orders> orders = new ArrayList<>();
 
 
 

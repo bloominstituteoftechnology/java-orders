@@ -1,77 +1,53 @@
 package com.stepasha.javaorders.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "orders")
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
     private long ordnum;
 
-    @Column(unique = true,
-            nullable = false)
+    @Column(nullable = true)
     private double ordamount;
-
     private double advanceamount;
-    private String city;
     private String orderdescription;
+    //private long custcode;
 
-    @OneToMany(mappedBy = "order",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties("orders")
-    private List<Customers> menus = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "custcode", nullable = false)
+    private Customers customer;
 
-    @ManyToMany
-    @JoinTable(name = "payments",
-            joinColumns = @JoinColumn(name = "ordnum"),
-            inverseJoinColumns = @JoinColumn(name = "paymentid")
-    )
-    @JsonIgnoreProperties("restaurants")
-    List<Payments> payments = new ArrayList<>();
+    public Orders() { }
 
-    public Orders(double ordamount, double advanceamount, String city, String orderdescription) {
+    public Orders(double ordamount, double advanceamount, String orderdescription) {
         this.ordamount = ordamount;
         this.advanceamount = advanceamount;
-        this.city = city;
         this.orderdescription = orderdescription;
     }
-    public Orders(){}
 
-    public double getOrdamount() {
-        return ordamount;
-    }
+    public long getOrdnum() { return ordnum; }
 
-    public void setOrdamount(double ordamount) {
-        this.ordamount = ordamount;
-    }
+    public void setOrdnum(long ordnum) { this.ordnum = ordnum; }
 
-    public double getAdvanceamount() {
-        return advanceamount;
-    }
+    public double getOrdamount() { return ordamount; }
 
-    public void setAdvanceamount(double advanceamount) {
-        this.advanceamount = advanceamount;
-    }
+    public void setOrdamount(double ordamount) { this.ordamount = ordamount; }
 
-    public String getCity() {
-        return city;
-    }
+    public double getAdvanceamount() { return advanceamount; }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+    public void setAdvanceamount(double advanceamount) { this.advanceamount = advanceamount; }
 
-    public String getOrderdescription() {
-        return orderdescription;
-    }
+    public String getOrderdescription() { return orderdescription; }
 
-    public void setOrderdescription(String orderdescription) {
-        this.orderdescription = orderdescription;
-    }
+    public void setOrderdescription(String orderdescription) { this.orderdescription = orderdescription; }
+
+    public Customers getCustomer() { return customer; }
+
+    public void setCustomer(Customers customer) { this.customer = customer; }
 }
