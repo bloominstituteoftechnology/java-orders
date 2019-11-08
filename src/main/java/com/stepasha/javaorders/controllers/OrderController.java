@@ -69,8 +69,8 @@ public class OrderController {
     }
     //http://localhost:0138/orders/order/11
     @DeleteMapping(value = "/order/{ordnum}")
-    public ResponseEntity<?> deleteOrder(@PathVariable long ordnum){
-        orderService.delete(ordnum);
+    public ResponseEntity<?> deleteOrder(@PathVariable long id){
+        orderService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
