@@ -116,6 +116,8 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void delete(long id) {
-
+        if(findCustomerById(id) != null){
+            custRepo.deleteById(id);
+        };
     }
 }
