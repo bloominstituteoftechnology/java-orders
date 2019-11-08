@@ -15,8 +15,8 @@ import java.util.List;
 @Transactional
 @Service(value = "customerService")
 public class CustomerServiceImpl implements CustomerService{
-  //  @Autowired
-//    private PaymentService paymentService;
+   @Autowired
+    private PaymentService paymentService;
     @Autowired
     private OrderService orderService;
     @Autowired
@@ -54,16 +54,17 @@ public class CustomerServiceImpl implements CustomerService{
        newCustomer.setOutstandingamt(customers.getOutstandingamt());
        newCustomer.setPhone(customers.getPhone());
        newCustomer.setAgent(customers.getAgent());
-       //newCustomer.setOrders(customers.getOrders());
+
 
        for (Orders o: customers.getOrders()){
            Orders newOrder = new Orders(o.getOrdamount(), o.getAdvanceamount(), newCustomer, o.getOrderdescription());
            newCustomer.getOrders().add(newOrder);
+           for (Payments p : o.getPayments()){
+               Payments newPayment = paymentService.findPaymentById(p.getPaymentid());
+               newOrder.getPayments().add(newPayment);
+           }
        }
-
-
-
-    return custRepo.save(newCustomer);
+       return custRepo.save(newCustomer);
     }
 
     @Transactional

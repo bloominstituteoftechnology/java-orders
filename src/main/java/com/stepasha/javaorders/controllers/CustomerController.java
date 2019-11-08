@@ -58,6 +58,7 @@ public class CustomerController {
                 .buildAndExpand(newCustomer.getCustcode())
                 .toUri();
         responseHeader.setLocation(newCustomerUri);
+
         return new ResponseEntity<>(null, responseHeader, HttpStatus.CREATED);
     }
 

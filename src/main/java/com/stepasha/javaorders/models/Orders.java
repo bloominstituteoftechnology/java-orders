@@ -13,7 +13,11 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long ordnum;
+    @Transient
+    public boolean hasorderamount = false;
     private double ordamount;
+    @Transient
+    public boolean hasadvanceammount = false;
     private double advanceamount;
 
     //many orders to one customer. ignoring agent because he cant place orders, and orders because thats what we already are listing
@@ -51,6 +55,10 @@ public class Orders {
     }
 
     public void setOrdamount(double ordamount) {
+
+        //        hasvalueforopeningatm = true;
+        //        this.openingamt = openingamt
+        hasorderamount =true;
         this.ordamount = ordamount;
     }
 
@@ -59,6 +67,7 @@ public class Orders {
     }
 
     public void setAdvanceamount(double advanceamount) {
+        hasadvanceammount =true;
         this.advanceamount = advanceamount;
     }
 

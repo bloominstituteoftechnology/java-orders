@@ -4,13 +4,14 @@ import com.stepasha.javaorders.models.Orders;
 import com.stepasha.javaorders.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,4 +41,37 @@ public class OrderController {
         }
         return new ResponseEntity<>(returnOrders, HttpStatus.OK);
     }
+    //http://localhost:0138/orders/order
+    @PostMapping(value = "/order",
+    consumes = {"application/json"})
+    public ResponseEntity<?> addNewReceipt(
+            @Valid
+            @RequestBody Orders newOrders){
+        newOrders = orderService.save(newOrders);
+        HttpHeaders responseHeader = new HttpHeaders();
+        URI newOrderUri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(newOrders.getOrdnum())
+                .toUri();
+        responseHeader.setLocation(newOrderUri);
+        //(order.getOrdnum(), responseHeaders, HttpStatus.CREATED);
+        return new ResponseEntity<>(newOrders, responseHeader, HttpStatus.CREATED);
+
+
+    }
+    //http://localhost:0138/orders/order/11
+    @PutMapping(value = "/order/{ordnum}",
+            consumes = {"application/json"})
+    public ResponseEntity<?> updateOrder(@RequestBody Orders updateOrder,
+                                            @PathVariable long ordnum){
+        orderService.update(updateOrder, ordnum);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    //http://localhost:0138/orders/order/11
+    @DeleteMapping(value = "/order/{ordnum}")
+    public ResponseEntity<?> deleteOrder(@PathVariable long ordnum){
+        orderService.delete(ordnum);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
