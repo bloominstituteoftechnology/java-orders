@@ -18,9 +18,17 @@ public class Customers {
     private String workingarea;
     private String custcountry;
     private String grade;
+    @Transient
+    public boolean hasvalueforopeningatm = false;
     private double openingamt;
+    @Transient
+    public boolean hasvalueforreceiveatm = false;
     private double receiveamt;
+    @Transient
+    public boolean hasvalueforpaymentatm = false;
     private double paymentamt;
+    @Transient
+    public boolean hasvalueforoutstandingatm =false;
     private double outstandingamt;
     private String phone;
 
@@ -116,6 +124,9 @@ public class Customers {
     }
 
     public void setOpeningamt(double openingamt) {
+
+        //TODO 7 for anything that cant be null
+        hasvalueforopeningatm = true;
         this.openingamt = openingamt;
     }
 
@@ -124,6 +135,9 @@ public class Customers {
     }
 
     public void setReceiveamt(double receiveamt) {
+
+        //TODO 7 for anything that cant be null
+        hasvalueforreceiveatm = true;
         this.receiveamt = receiveamt;
     }
 
@@ -132,6 +146,9 @@ public class Customers {
     }
 
     public void setPaymentamt(double paymentamt) {
+
+        //TODO 7 for anything that cant be null
+        hasvalueforpaymentatm = true;
         this.paymentamt = paymentamt;
     }
 
@@ -140,6 +157,9 @@ public class Customers {
     }
 
     public void setOutstandingamt(double outstandingamt) {
+
+        //TODO 7 for anything that cant be null
+        hasvalueforoutstandingatm = true;
         this.outstandingamt = outstandingamt;
     }
 

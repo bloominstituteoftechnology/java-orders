@@ -60,4 +60,13 @@ public class CustomerController {
         responseHeader.setLocation(newCustomerUri);
         return new ResponseEntity<>(null, responseHeader, HttpStatus.CREATED);
     }
+
+    //http://localhost:0138/customers/customer/11
+    @PutMapping(value = "/customer/{customerid}",
+    consumes = {"application/json"})
+    public ResponseEntity<?> updateCustomer(@RequestBody Customers updateCustomer,
+                                            @PathVariable long customerid){
+        customerService.update(updateCustomer, customerid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
