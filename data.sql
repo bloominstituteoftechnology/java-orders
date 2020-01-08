@@ -83,4 +83,7 @@ INSERT INTO ORDERSPAYMENTS (ordnum, paymentid)
                            (11, 2),
                            (12, 1);
                            
-alter sequence hibernate_sequence restart with 50;
+/*
+Must tell hibernate of the id numbers already used.
+The number after with must be greater that the highest number id assigned.
+ */alter sequence hibernate_sequence restart with 50;

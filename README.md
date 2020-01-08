@@ -10,13 +10,13 @@ A student that completes this project shows that they can:
 
 This is a basic database scheme with customers, orders, and sales agents. This Java Spring REST API application will provide endpoints for clients to read various data sets contained in the applications data.
 
-Using the provided seed, a successful application will return the follow data based on the given endpoint. Expand the section of the endpoint to see the data that is returned.
+Using the provided seed data, a successful application will return the follow data based on the given endpoint. Expand the section of the endpoint to see the data that is returned.
 
 ### Database layout
 
 The table layouts are as follows
 
-![Image of Database Layout](/java-orders-db.png?raw=true "Image of Database Layout)
+![Image of Database Layout](java-orders-db.png)
 
 * AGENTS
   * AGENTCODE primary key, not null Long
@@ -71,8 +71,9 @@ Using the provided seed data, the given endpoint will produce the stated output.
 
 ### MVP
 
-<details><summary>http://localhost:2019/customers/orders</summary>
-<p>
+<details>
+<summary>http://localhost:2019/customers/orders</summary>
+
 ```JSON
 [
     {
@@ -119,16 +120,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 7,
+                "ordamount": 3500.0,
+                "advanceamount": 2000.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 4,
                         "type": "Mobile Pay"
                     }
-                ],
-                "ordnum": 7,
-                "ordamount": 3500.0,
-                "advanceamount": 2000.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -154,16 +155,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 8,
+                "ordamount": 2500.0,
+                "advanceamount": 400.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 1,
                         "type": "Cash"
                     }
-                ],
-                "ordnum": 8,
-                "ordamount": 2500.0,
-                "advanceamount": 400.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -255,6 +256,10 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 3,
+                "ordamount": 4500.0,
+                "advanceamount": 900.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 3,
@@ -264,23 +269,19 @@ Using the provided seed data, the given endpoint will produce the stated output.
                         "paymentid": 2,
                         "type": "Gift Card"
                     }
-                ],
-                "ordnum": 3,
-                "ordamount": 4500.0,
-                "advanceamount": 900.0,
-                "orderdescription": "SOD"
+                ]
             },
             {
+                "ordnum": 10,
+                "ordamount": 4000.0,
+                "advanceamount": 700.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 4,
                         "type": "Mobile Pay"
                     }
-                ],
-                "ordnum": 10,
-                "ordamount": 4000.0,
-                "advanceamount": 700.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -306,16 +307,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 11,
+                "ordamount": 1500.0,
+                "advanceamount": 600.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 2,
                         "type": "Gift Card"
                     }
-                ],
-                "ordnum": 11,
-                "ordamount": 1500.0,
-                "advanceamount": 600.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -407,16 +408,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 6,
+                "ordamount": 2000.0,
+                "advanceamount": 0.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 3,
                         "type": "Credit Card"
                     }
-                ],
-                "ordnum": 6,
-                "ordamount": 2000.0,
-                "advanceamount": 0.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -442,16 +443,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 1,
+                "ordamount": 1000.0,
+                "advanceamount": 600.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 1,
                         "type": "Cash"
                     }
-                ],
-                "ordnum": 1,
-                "ordamount": 1000.0,
-                "advanceamount": 600.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -521,16 +522,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 4,
+                "ordamount": 2000.0,
+                "advanceamount": 0.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 4,
                         "type": "Mobile Pay"
                     }
-                ],
-                "ordnum": 4,
-                "ordamount": 2000.0,
-                "advanceamount": 0.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -600,16 +601,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 2,
+                "ordamount": 3000.0,
+                "advanceamount": 500.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 2,
                         "type": "Gift Card"
                     }
-                ],
-                "ordnum": 2,
-                "ordamount": 3000.0,
-                "advanceamount": 500.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -679,16 +680,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 5,
+                "ordamount": 4000.0,
+                "advanceamount": 600.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 2,
                         "type": "Gift Card"
                     }
-                ],
-                "ordnum": 5,
-                "ordamount": 4000.0,
-                "advanceamount": 600.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -714,16 +715,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 9,
+                "ordamount": 500.0,
+                "advanceamount": 0.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 3,
                         "type": "Credit Card"
                     }
-                ],
-                "ordnum": 9,
-                "ordamount": 500.0,
-                "advanceamount": 0.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     },
@@ -771,24 +772,27 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 12,
+                "ordamount": 2500.0,
+                "advanceamount": 0.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 1,
                         "type": "Cash"
                     }
-                ],
-                "ordnum": 12,
-                "ordamount": 2500.0,
-                "advanceamount": 0.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     }
 ]
 ```
-</p></details>
-<details><summary>http://localhost:2019/customers/customer/7</summary>
-<p>
+
+</details>
+
+<details>
+<summary>http://localhost:2019/customers/customer/7</summary>
+
 ```JSON
 {
     "custcode": 7,
@@ -812,6 +816,10 @@ Using the provided seed data, the given endpoint will produce the stated output.
     },
     "orders": [
         {
+            "ordnum": 3,
+            "ordamount": 4500.0,
+            "advanceamount": 900.0,
+            "orderdescription": "SOD",
             "payments": [
                 {
                     "paymentid": 3,
@@ -821,43 +829,44 @@ Using the provided seed data, the given endpoint will produce the stated output.
                     "paymentid": 2,
                     "type": "Gift Card"
                 }
-            ],
-            "ordnum": 3,
-            "ordamount": 4500.0,
-            "advanceamount": 900.0,
-            "orderdescription": "SOD"
+            ]
         },
         {
+            "ordnum": 10,
+            "ordamount": 4000.0,
+            "advanceamount": 700.0,
+            "orderdescription": "SOD",
             "payments": [
                 {
                     "paymentid": 4,
                     "type": "Mobile Pay"
                 }
-            ],
-            "ordnum": 10,
-            "ordamount": 4000.0,
-            "advanceamount": 700.0,
-            "orderdescription": "SOD"
+            ]
         }
     ]
 }
 ```
-</p></details>
-<details><summary>http://localhost:2019/customers/customer/77</summary>
-<p>
+
+</details>
+
+<details>
+<summary>http://localhost:2019/customers/customer/77</summary>
+
 ```JSON
 {
-    "timestamp": "2020-01-08T22:07:05.386+0000",
+    "timestamp": "2020-01-08T23:30:47.650+0000",
     "status": 500,
     "error": "Internal Server Error",
     "message": "Customer 77 Not Found",
-    "trace": "javax.persistence.EntityNotFoundException: Customer 77 Not Found\n\tat com.lambdaschool.orders.services.CustomersServiceImpl.lambda$findCustomersById$0(CustomersServiceImpl.java:52)\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\n\tat com.lambdaschool.orders.services.CustomersServiceImpl.findCustomersById(CustomersServiceImpl.java:52)\n\tat com.lambdaschool.orders.services.CustomersServiceImpl$$FastClassBySpringCGLIB$$e088be2d.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)\n\tat com.lambdaschool.orders.services.CustomersServiceImpl$$EnhancerBySpringCGLIB$$23989b3a.findCustomersById(<generated>)\n\tat com.lambdaschool.orders.controllers.CustomersController.getCustomerById(CustomersController.java:58)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Thread.java:834)\n",
+    "trace": "javax.persistence.EntityNotFoundException: Customer 77 Not Found\n\tat com.lambdaschool.orders.services.CustomersServiceImpl.lambda$findCustomersById$0(CustomersServiceImpl.java:52)\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\n\tat com.lambdaschool.orders.services.CustomersServiceImpl.findCustomersById(CustomersServiceImpl.java:52)\n\tat com.lambdaschool.orders.services.CustomersServiceImpl$$FastClassBySpringCGLIB$$e088be2d.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)\n\tat com.lambdaschool.orders.services.CustomersServiceImpl$$EnhancerBySpringCGLIB$$389d142b.findCustomersById(<generated>)\n\tat com.lambdaschool.orders.controllers.CustomersController.getCustomerById(CustomersController.java:58)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Thread.java:834)\n",
     "path": "/customers/customer/77"
 }
 ```
-</p></details>
-<details><summary>http://localhost:2019/customers/namelike/mes</summary>
-<p>
+
+</details>
+<details>
+<summary>http://localhost:2019/customers/namelike/mes</summary>
+
 ```JSON
 [
     {
@@ -904,30 +913,36 @@ Using the provided seed data, the given endpoint will produce the stated output.
         },
         "orders": [
             {
+                "ordnum": 5,
+                "ordamount": 4000.0,
+                "advanceamount": 600.0,
+                "orderdescription": "SOD",
                 "payments": [
                     {
                         "paymentid": 2,
                         "type": "Gift Card"
                     }
-                ],
-                "ordnum": 5,
-                "ordamount": 4000.0,
-                "advanceamount": 600.0,
-                "orderdescription": "SOD"
+                ]
             }
         ]
     }
 ]
 ```
-</p></details>
-<details><summary>http://localhost:2019/customers/namelike/cin</summary>
-<p>
+
+</details>
+
+<details>
+<summary>http://localhost:2019/customers/namelike/cin</summary>
+
 ```JSON
 []
 ```
-</p></details>
-<details><summary>http://localhost:2019/agents/agent/9</summary>
-<p>
+
+</details>
+
+<details>
+<summary>http://localhost:2019/agents/agent/9</summary>
+
 ```JSON
 {
     "agentcode": 9,
@@ -954,21 +969,24 @@ Using the provided seed data, the given endpoint will produce the stated output.
     ]
 }
 ```
-</p></details>
-<details><summary>http://localhost:2019/orders/order/7</summary>
-<p>
+
+</details>
+
+<details>
+<summary>http://localhost:2019/orders/order/7</summary>
+
 ```JSON
 {
+    "ordnum": 7,
+    "ordamount": 3500.0,
+    "advanceamount": 2000.0,
+    "orderdescription": "SOD",
     "payments": [
         {
             "paymentid": 4,
             "type": "Mobile Pay"
         }
     ],
-    "ordnum": 7,
-    "ordamount": 3500.0,
-    "advanceamount": 2000.0,
-    "orderdescription": "SOD",
     "customer": {
         "custcode": 2,
         "custname": "Micheal",
@@ -992,25 +1010,27 @@ Using the provided seed data, the given endpoint will produce the stated output.
     }
 }
 ```
-</p></details>
+
+</details>
 
 ### Stretch Goal
 
-<details><summary>http://localhost:2019//orders/advanceamount</summary>
-<p>
+<details>
+<summary>http://localhost:2019//orders/advanceamount</summary>
+
 ```JSON
 [
     {
+        "ordnum": 1,
+        "ordamount": 1000.0,
+        "advanceamount": 600.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 1,
                 "type": "Cash"
             }
         ],
-        "ordnum": 1,
-        "ordamount": 1000.0,
-        "advanceamount": 600.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 13,
             "custname": "Avinash",
@@ -1034,16 +1054,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 2,
+        "ordamount": 3000.0,
+        "advanceamount": 500.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 2,
                 "type": "Gift Card"
             }
         ],
-        "ordnum": 2,
-        "ordamount": 3000.0,
-        "advanceamount": 500.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 19,
             "custname": "Steven",
@@ -1067,6 +1087,10 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 3,
+        "ordamount": 4500.0,
+        "advanceamount": 900.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 3,
@@ -1077,10 +1101,6 @@ Using the provided seed data, the given endpoint will produce the stated output.
                 "type": "Gift Card"
             }
         ],
-        "ordnum": 3,
-        "ordamount": 4500.0,
-        "advanceamount": 900.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 7,
             "custname": "Bolt",
@@ -1104,16 +1124,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 5,
+        "ordamount": 4000.0,
+        "advanceamount": 600.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 2,
                 "type": "Gift Card"
             }
         ],
-        "ordnum": 5,
-        "ordamount": 4000.0,
-        "advanceamount": 600.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 22,
             "custname": "Ramesh",
@@ -1137,16 +1157,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 7,
+        "ordamount": 3500.0,
+        "advanceamount": 2000.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 4,
                 "type": "Mobile Pay"
             }
         ],
-        "ordnum": 7,
-        "ordamount": 3500.0,
-        "advanceamount": 2000.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 2,
             "custname": "Micheal",
@@ -1170,16 +1190,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 8,
+        "ordamount": 2500.0,
+        "advanceamount": 400.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 1,
                 "type": "Cash"
             }
         ],
-        "ordnum": 8,
-        "ordamount": 2500.0,
-        "advanceamount": 400.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 3,
             "custname": "Albert",
@@ -1203,16 +1223,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 10,
+        "ordamount": 4000.0,
+        "advanceamount": 700.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 4,
                 "type": "Mobile Pay"
             }
         ],
-        "ordnum": 10,
-        "ordamount": 4000.0,
-        "advanceamount": 700.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 7,
             "custname": "Bolt",
@@ -1236,16 +1256,16 @@ Using the provided seed data, the given endpoint will produce the stated output.
         }
     },
     {
+        "ordnum": 11,
+        "ordamount": 1500.0,
+        "advanceamount": 600.0,
+        "orderdescription": "SOD",
         "payments": [
             {
                 "paymentid": 2,
                 "type": "Gift Card"
             }
         ],
-        "ordnum": 11,
-        "ordamount": 1500.0,
-        "advanceamount": 600.0,
-        "orderdescription": "SOD",
         "customer": {
             "custcode": 8,
             "custname": "Fleming",
@@ -1268,8 +1288,10 @@ Using the provided seed data, the given endpoint will produce the stated output.
             }
         }
     }
-]```
-</p></details>
+]
+```
+
+</details>
 
 ## Instructions
 
