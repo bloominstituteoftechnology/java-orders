@@ -4,6 +4,8 @@ A student that completes this project shows that they can:
 
 * Perform CRUD operations on an RDBMS using JPA and Hibernate (reading)
 * Implement seed data using SQL statements
+* Explain and use Spring Data Relationships
+* Use the JsonIgnoreProperties annotation to prevent infinite loops
 * Use H2 Console and H2 IntelliJ integration to explore data
 
 ## Introduction
