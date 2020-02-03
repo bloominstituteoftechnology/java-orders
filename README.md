@@ -61,7 +61,7 @@ The table layouts are as follows
   * Customers has a Many to One relationship to Agents and
   * Agents has a One to Many relationship to Customers
 
-* Orders has a foreign key to Customers (CUSTCODE) 
+* Orders has a foreign key to Customers (CUSTCODE)
   * Orders has a Many to One relationship to Customers and
   * Customers has a One to Many relationship to Orders
 
