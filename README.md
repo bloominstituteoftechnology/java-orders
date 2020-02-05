@@ -6,13 +6,10 @@ A student that completes this project shows that they can:
 * Implement seed data using SQL statements
 * Explain and use Spring Data Relationships
 * Use the JsonIgnoreProperties annotation to prevent infinite loops
-* Use H2 Console and H2 IntelliJ integration to explore data
 
 ## Introduction
 
-This is a basic database scheme with customers, orders, and sales agents. This Java Spring REST API application will provide endpoints for clients to read various data sets contained in the applications data.
-
-Using the provided seed data, a successful application will return the follow data based on the given endpoint. Expand the section of the endpoint to see the data that is returned.
+This is a basic database scheme with customers, orders, and sales agents. This Java Spring REST API application will provide endpoints for clients to read various data sets contained in the application's data.
 
 ### Database layout
 
@@ -69,7 +66,7 @@ The table layouts are as follows
   * multiple orders can use the same payment type and an order can have multiple payment types.
   * For example you can use both gift card and credit card to pay for an order.
 
-Using the provided seed data, the given endpoint will produce the stated output. Expand each endpoint to see its correct output.
+Using the provided seed data, a successful application will return the follow data based on the given endpoint. Expand the section of the endpoint to see the data that is returned.
 
 ### MVP
 
@@ -1018,7 +1015,7 @@ Using the provided seed data, the given endpoint will produce the stated output.
 ### Stretch Goal
 
 <details>
-<summary>http://localhost:2019//orders/advanceamount</summary>
+<summary>http://localhost:2019/orders/advanceamount</summary>
 
 ```JSON
 [
