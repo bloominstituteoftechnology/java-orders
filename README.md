@@ -64,9 +64,9 @@ The table layouts are as follows
 
 * Orders has a many to many relationship with payments
   * multiple orders can use the same payment type and an order can have multiple payment types.
-  * For example you can use both gift card and credit card to pay for an order.
+  * For example, you can use both gift card and credit card to pay for an order.
 
-Using the provided seed data, a successful application will return the follow data based on the given endpoint. Expand the section of the endpoint to see the data that is returned.
+Using the provided seed data, a successful application will return the following data based on the given endpoint. Expand the section of the endpoint to see the data that is returned.
 
 ### MVP
 
