@@ -1,7 +1,7 @@
 package com.lambdaschool.javaorders.services;
 
 import com.lambdaschool.javaorders.model.Agent;
-import com.lambdaschool.javaorders.respositories.AgentRepository;
+import com.lambdaschool.javaorders.repositories.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.lambdaschool.javaorders.controllers;
 
 
 import com.lambdaschool.javaorders.model.Agent;
-import com.lambdaschool.javaorders.respositories.AgentRepository;
+import com.lambdaschool.javaorders.repositories.AgentRepository;
 import com.lambdaschool.javaorders.services.AgentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

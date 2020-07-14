@@ -12,7 +12,7 @@ import java.util.List;
 @Service(value = "customerService")
 public class CustomerServiceImpl implements CustomerService{
     @Autowired
-    private com.lambdaschool.javaorders.respositories.CustomersRepository customerRepository;
+    private com.lambdaschool.javaorders.repositories.CustomersRepository customerRepository;
 
     @Override
     public List<Customers> findAllCustomers() {
