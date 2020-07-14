@@ -1,7 +1,7 @@
 package com.lambdaschool.javaorders.services;
 
 import com.lambdaschool.javaorders.model.Orders;
-//import com.lambdaschool.javaorders.repositories.OrdersRepository;
+import com.lambdaschool.javaorders.repositories.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service(value = "orderServices")
-public class OrderServiceImpl implements OrderServices
+class OrderServiceImpl implements OrderServices
 {
 
     @Autowired

@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@EntityListeners({Agent.class})
 @Entity
 @Table(name = "agents")
 public class Agent {
