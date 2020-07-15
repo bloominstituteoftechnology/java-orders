@@ -1,21 +1,18 @@
-import com.github.javafaker.Faker;
-import com.lambdaschool.crudyorders.models.Agent;
-import com.lambdaschool.crudyorders.models.Customer;
-import com.lambdaschool.crudyorders.models.Order;
-import com.lambdaschool.crudyorders.models.Payment;
-import com.lambdaschool.crudyorders.repositories.AgentsRepository;
-import com.lambdaschool.crudyorders.repositories.CustomersRepository;
-import com.lambdaschool.crudyorders.repositories.OrdersRepository;
-import com.lambdaschool.crudyorders.repositories.PaymentRepository;
+package com.lambdaschool.javaorders;
+
+//import com.github.javafaker.Faker;
+import com.lambdaschool.javaorders.models.Agent;
+import com.lambdaschool.javaorders.models.Customer;
+import com.lambdaschool.javaorders.models.Order;
+import com.lambdaschool.javaorders.models.Payment;
+import com.lambdaschool.javaorders.repositories.AgentRepository;
+import com.lambdaschool.javaorders.repositories.CustomerRepository;
+import com.lambdaschool.javaorders.repositories.OrderRepository;
+import com.lambdaschool.javaorders.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Random;
-import java.util.Set;
 
 
 @Transactional
@@ -26,19 +23,19 @@ public class SeedData implements CommandLineRunner
      * Connects the customer table to this SeedData method
      */
     @Autowired
-    private CustomersRepository custrepos;
+    private CustomerRepository custrepos;
 
     /**
      * Connects the agents table to this SeedData method
      */
     @Autowired
-    private AgentsRepository agentrepos;
+    private AgentRepository agentrepos;
 
     /**
      * Connects the orders table to this SeedData method
      */
     @Autowired
-    private OrdersRepository ordersrepos;
+    private OrderRepository ordersrepos;
 
     /**
      * Connects the payment table to this SeedData method
