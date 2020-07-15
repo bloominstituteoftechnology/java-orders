@@ -21,7 +21,7 @@ public class Order
     private String orderdescription;
 
     @ManyToMany()
-    @JoinTable(name = "orderpayments",
+    @JoinTable(name = "orderspayments",
     joinColumns = @JoinColumn(name = "ordnum"),
     inverseJoinColumns = @JoinColumn(name = "paymentid"))
     private Set<Payment> payments = new HashSet<>();
