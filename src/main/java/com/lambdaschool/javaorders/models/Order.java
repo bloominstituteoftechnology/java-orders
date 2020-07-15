@@ -11,7 +11,7 @@ public class Order
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    private long ordernum;
+    private long ordnum;
     private double ordamount;
     private double advanceamount;
 
@@ -40,14 +40,14 @@ public class Order
         this.orderdescription = orderdescription;
     }
 
-    public long getOrdernum()
+    public long getordnum()
     {
-        return ordernum;
+        return ordnum;
     }
 
-    public void setOrdernum(long ordernum)
+    public void setordnum(long ordnum)
     {
-        this.ordernum = ordernum;
+        this.ordnum = ordnum;
     }
 
     public double getOrdamount()
@@ -98,5 +98,9 @@ public class Order
     public void setPayments(Set<Payment> payments)
     {
         this.payments = payments;
+    }
+
+    public void addPayments(Payment payment){
+        payments.add(payment);
     }
 }

@@ -13,15 +13,17 @@ public class Customer
     @Column(nullable = false)
     private long custcode;
 
+    //custcode, custname, custcity, workingarea, custcountry, grade, openingamt, receiveamt, paymentamt
+
     @Column(nullable = false)
     private String custname;
     private String custcity;
-    private String workingArea;
+    private String workingarea;
     private String custcountry;
     private String grade;
     private double openingamt;
-    private double receiveamnt;
-    private double paymentamnt;
+    private double receiveamt;
+    private double paymentamt;
     private double outstandingamt;
     private String phone;
 
@@ -39,24 +41,24 @@ public class Customer
     public Customer(
         String custname,
         String custcity,
-        String workingArea,
+        String workingarea,
         String custcountry,
         String grade,
         double openingamt,
-        double receiveamnt,
-        double paymentamnt,
+        double receiveamt,
+        double paymentamt,
         double outstandingamt,
         String phone,
         Agent agent)
     {
         this.custname = custname;
         this.custcity = custcity;
-        this.workingArea = workingArea;
+        this.workingarea = workingarea;
         this.custcountry = custcountry;
         this.grade = grade;
         this.openingamt = openingamt;
-        this.receiveamnt = receiveamnt;
-        this.paymentamnt = paymentamnt;
+        this.receiveamt = receiveamt;
+        this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
         this.agent = agent;
@@ -94,12 +96,12 @@ public class Customer
 
     public String getWorkingArea()
     {
-        return workingArea;
+        return workingarea;
     }
 
-    public void setWorkingArea(String workingArea)
+    public void setWorkingArea(String workingarea)
     {
-        this.workingArea = workingArea;
+        this.workingarea = workingarea;
     }
 
     public String getCustcountry()
@@ -134,22 +136,22 @@ public class Customer
 
     public double getReceiveamnt()
     {
-        return receiveamnt;
+        return receiveamt;
     }
 
     public void setReceiveamnt(double receiveamnt)
     {
-        this.receiveamnt = receiveamnt;
+        this.receiveamt = receiveamt;
     }
 
     public double getPaymentamnt()
     {
-        return paymentamnt;
+        return paymentamt;
     }
 
     public void setPaymentamnt(double paymentamnt)
     {
-        this.paymentamnt = paymentamnt;
+        this.paymentamt = paymentamt;
     }
 
     public double getOutstandingamt()
