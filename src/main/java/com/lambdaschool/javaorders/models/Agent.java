@@ -10,20 +10,17 @@ public class Agent
 {
     @Id // primary key number (long) of agents table
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long agentcode;
+    private long agentcode; // primary key
 
-    @Column(unique = true,
-        nullable = false)
     private String agentname;
-
     private String workingarea;
-
     private double commission;
-
+    private String phone;
     private String country;
 
     @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Customer> customers = new ArrayList<>();
+
 
     // Constructors
     public Agent()
@@ -31,16 +28,16 @@ public class Agent
     }
 
     public Agent(
-        long agentcode,
         String agentname,
         String workingarea,
         double commission,
+        String phone,
         String country)
     {
-        this.agentcode = agentcode;
         this.agentname = agentname;
         this.workingarea = workingarea;
         this.commission = commission;
+        this.phone = phone;
         this.country = country;
     }
 
@@ -84,6 +81,16 @@ public class Agent
     public void setCommission(double commission)
     {
         this.commission = commission;
+    }
+
+    public String getPhone()
+    {
+        return phone;
+    }
+
+    public void setPhone(String phone)
+    {
+        this.phone = phone;
     }
 
     public String getCountry()

@@ -1,6 +1,8 @@
 package com.lambdaschool.javaorders.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -8,10 +10,11 @@ public class Customer
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long custcode;
+    private long custcode; // primary key
 
     @Column(nullable = false)
     private String custname;
+
     private String custcity;
     private String workingarea;
     private String custcountry;
@@ -23,8 +26,11 @@ public class Customer
     private String phone;
 
     @ManyToOne
-    @JoinColumn(name = "agentcode", nullable = false) // primary key inside of restaurant, sql handles in relational DB
+    @JoinColumn(name = "agentcode", nullable = false) // primary key inside of agent, sql handles in relational DB
     private Agent agent; // java handles as object
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
 
     // Constructors
     public Customer()
@@ -41,7 +47,8 @@ public class Customer
         double receiveamt,
         double paymentamt,
         double outstandingamt,
-        String phone)
+        String phone,
+        Agent agent)
     {
         this.custname = custname;
         this.custcity = custcity;
@@ -53,7 +60,9 @@ public class Customer
         this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
+        this.agent = agent;
     }
+
 
     // Getters and Setters
     public long getCustcode()

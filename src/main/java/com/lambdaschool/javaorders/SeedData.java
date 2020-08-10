@@ -1,14 +1,15 @@
-package com.lambdaschool.crudyorders;
+/*
+package com.lambdaschool.javaorders;
 
-import com.github.javafaker.Faker;
-import com.lambdaschool.crudyorders.models.Agent;
-import com.lambdaschool.crudyorders.models.Customer;
-import com.lambdaschool.crudyorders.models.Order;
-import com.lambdaschool.crudyorders.models.Payment;
-import com.lambdaschool.crudyorders.repositories.AgentsRepository;
-import com.lambdaschool.crudyorders.repositories.CustomersRepository;
-import com.lambdaschool.crudyorders.repositories.OrdersRepository;
-import com.lambdaschool.crudyorders.repositories.PaymentRepository;
+// import com.github.javafaker.Faker;
+import com.lambdaschool.javaorders.models.Agent;
+import com.lambdaschool.javaorders.models.Customer;
+import com.lambdaschool.javaorders.models.Order;
+import com.lambdaschool.javaorders.models.Payment;
+import com.lambdaschool.javaorders.repositories.AgentsRepository;
+import com.lambdaschool.javaorders.repositories.CustomersRepository;
+import com.lambdaschool.javaorders.repositories.OrdersRepository;
+import com.lambdaschool.javaorders.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -21,34 +22,43 @@ import java.util.Set;
 
 
 @Transactional
-@Component
+//@Component
 public class SeedData implements CommandLineRunner
 {
-    /**
+    */
+/**
      * Connects the customer table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private CustomersRepository custrepos;
 
-    /**
+    */
+/**
      * Connects the agents table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private AgentsRepository agentrepos;
 
-    /**
+    */
+/**
      * Connects the orders table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private OrdersRepository ordersrepos;
 
-    /**
+    */
+/**
      * Connects the payment table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private PaymentRepository paymentrepos;
 
-    /**
+    */
+/**
      * Generates test, seed data for our application
      * First a set of known data is seeded into our database.
      * Second a random set of data using Java Faker is seeded into our database.
@@ -56,7 +66,8 @@ public class SeedData implements CommandLineRunner
      * prior to running this process, that data remains in the database.
      *
      * @param args The parameter is required by the parent interface but is not used in this process.
-     */
+     *//*
+
     @Transactional
     @Override
     public void run(String[] args) throws Exception
@@ -533,4 +544,4 @@ public class SeedData implements CommandLineRunner
         ordersrepos.save(o11);
         ordersrepos.save(o12);
     }
-}
+}*/
