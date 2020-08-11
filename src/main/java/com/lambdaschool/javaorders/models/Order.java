@@ -105,4 +105,9 @@ public class Order
     {
         this.payments = payments;
     }
+
+    public void addPayments(Payment type)
+    {
+//        payments.add(type);
+    }
 }

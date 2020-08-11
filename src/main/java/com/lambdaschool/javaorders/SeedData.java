@@ -1,4 +1,3 @@
-/*
 package com.lambdaschool.javaorders;
 
 // import com.github.javafaker.Faker;
@@ -22,51 +21,45 @@ import java.util.Set;
 
 
 @Transactional
-//@Component
+@Component
 public class SeedData implements CommandLineRunner
 {
-    */
-/**
-     * Connects the customer table to this SeedData method
-     *//*
+//*
+//     * Connects the customer table to this SeedData method
+
 
     @Autowired
     private CustomersRepository custrepos;
 
-    */
-/**
-     * Connects the agents table to this SeedData method
-     *//*
+//*
+//     * Connects the agents table to this SeedData method
+
 
     @Autowired
     private AgentsRepository agentrepos;
 
-    */
-/**
-     * Connects the orders table to this SeedData method
-     *//*
+//*
+//     * Connects the orders table to this SeedData method
+
 
     @Autowired
     private OrdersRepository ordersrepos;
 
-    */
-/**
-     * Connects the payment table to this SeedData method
-     *//*
+/*
+     * Connects the payment table to this SeedData method*/
+
 
     @Autowired
     private PaymentRepository paymentrepos;
 
-    */
-/**
-     * Generates test, seed data for our application
+/*     * Generates test, seed data for our application
      * First a set of known data is seeded into our database.
      * Second a random set of data using Java Faker is seeded into our database.
      * Note this process does not remove data from the database. So if data exists in the database
      * prior to running this process, that data remains in the database.
      *
-     * @param args The parameter is required by the parent interface but is not used in this process.
-     *//*
+     * @param args The parameter is required by the parent interface but is not used in this process.*/
+
 
     @Transactional
     @Override
@@ -544,4 +537,4 @@ public class SeedData implements CommandLineRunner
         ordersrepos.save(o11);
         ordersrepos.save(o12);
     }
-}*/
+}
