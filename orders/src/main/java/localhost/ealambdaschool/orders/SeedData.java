@@ -1,18 +1,23 @@
 package localhost.ealambdaschool.orders;
 
+//modles aka Tables
 import localhost.ealambdaschool.orders.models.Agent;
 import localhost.ealambdaschool.orders.models.Customer;
 import localhost.ealambdaschool.orders.models.Order;
 import localhost.ealambdaschool.orders.models.Payment;
+//Repositories
+import localhost.ealambdaschool.orders.repo.PaymentRepository;
 import localhost.ealambdaschool.orders.repo.AgentsRepository;
 import localhost.ealambdaschool.orders.repo.CustomerRepository;
 import localhost.ealambdaschool.orders.repo.OrderRepositories;
-import localhost.ealambdaschool.orders.repo.PaymentRepository;
+
+//Spring
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+//Libraries
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
@@ -20,7 +25,7 @@ import java.util.Set;
 
 
 @Transactional
-@Component
+//@Component
 public class SeedData implements CommandLineRunner
 {
     /**
