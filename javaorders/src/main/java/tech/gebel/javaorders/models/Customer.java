@@ -42,4 +42,21 @@ public class Customer {
 
 
     private String grade, phone;
+
+    public Customer() {
+    }
+
+    public Customer(String customerCity, String customerCountry, String customerName, double openingAmount, double outstandingAmount, double paymentAmount, double receiveAmount, String workingArea, Agent agent, String grade, String phone) {
+        this.customerCity = customerCity;
+        this.customerCountry = customerCountry;
+        this.customerName = customerName;
+        this.openingAmount = openingAmount;
+        this.outstandingAmount = outstandingAmount;
+        this.paymentAmount = paymentAmount;
+        this.receiveAmount = receiveAmount;
+        this.workingArea = workingArea;
+        this.agent = agent;
+        this.grade = grade;
+        this.phone = phone;
+    }
 }
