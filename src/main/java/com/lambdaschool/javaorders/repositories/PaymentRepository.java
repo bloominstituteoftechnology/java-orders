@@ -1,4 +1,4 @@
-package com.lambdaschool.javaorders.respositories;
+package com.lambdaschool.javaorders.repositories;
 
 import com.lambdaschool.javaorders.models.Payment;
 import org.springframework.data.repository.CrudRepository;
