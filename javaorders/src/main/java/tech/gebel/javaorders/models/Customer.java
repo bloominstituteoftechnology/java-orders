@@ -35,5 +35,11 @@ public class Customer {
     @Column(name = "workingarea")
     private String workingArea;
 
+    @ManyToOne
+    @JoinColumn(name = "agentcode",
+            nullable = false)
+    private Agent agent;
+
+
     private String grade, phone;
 }

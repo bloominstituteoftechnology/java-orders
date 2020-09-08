@@ -1,6 +1,8 @@
 package tech.gebel.javaorders.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "agents")
@@ -16,6 +18,11 @@ public class Agent {
 
     @Column(name = "workingarea")
     private String workingArea;
+
+    @OneToMany(mappedBy = "agents",
+    cascade = CascadeType.ALL,
+    orphanRemoval = true)
+    private List<Customer> customers = new ArrayList<>();
 
     private double commission;
     private String country, phone;
