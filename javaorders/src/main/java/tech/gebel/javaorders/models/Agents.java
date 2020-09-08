@@ -10,7 +10,8 @@ public class Agents {
     @Column(name = "agentcode")
     private long agentCode;
 
-    @Column(name = "agentname")
+    @Column(name = "agentname",
+            nullable = false)
     private String agentName;
 
     private double commission;
