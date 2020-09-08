@@ -23,4 +23,13 @@ public class Order {
     @JoinColumn(name = "custcode",
             nullable = false)
     private Customer customer;
+
+    public Order() {
+    }
+
+    public Order(double advanceAmount, double orderAmount, String orderDescription) {
+        this.advanceAmount = advanceAmount;
+        this.orderAmount = orderAmount;
+        this.orderDescription = orderDescription;
+    }
 }
