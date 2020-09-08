@@ -14,12 +14,11 @@ public class Agents {
             nullable = false)
     private String agentName;
 
-    private double commission;
-    private String country;
-    private String phone;
-
     @Column(name = "workingarea")
     private String workingArea;
+
+    private double commission;
+    private String country, phone;
 
     public Agents() {
     }
