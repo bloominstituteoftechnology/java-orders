@@ -40,7 +40,6 @@ public class Customer {
             nullable = false)
     private Agent agent;
 
-
     private String grade, phone;
 
     public Customer() {
@@ -57,6 +56,102 @@ public class Customer {
         this.workingArea = workingArea;
         this.agent = agent;
         this.grade = grade;
+        this.phone = phone;
+    }
+
+    public long getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(long customerCode) {
+        this.customerCode = customerCode;
+    }
+
+    public String getCustomerCity() {
+        return customerCity;
+    }
+
+    public void setCustomerCity(String customerCity) {
+        this.customerCity = customerCity;
+    }
+
+    public String getCustomerCountry() {
+        return customerCountry;
+    }
+
+    public void setCustomerCountry(String customerCountry) {
+        this.customerCountry = customerCountry;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public double getOpeningAmount() {
+        return openingAmount;
+    }
+
+    public void setOpeningAmount(double openingAmount) {
+        this.openingAmount = openingAmount;
+    }
+
+    public double getOutstandingAmount() {
+        return outstandingAmount;
+    }
+
+    public void setOutstandingAmount(double outstandingAmount) {
+        this.outstandingAmount = outstandingAmount;
+    }
+
+    public double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
+
+    public double getReceiveAmount() {
+        return receiveAmount;
+    }
+
+    public void setReceiveAmount(double receiveAmount) {
+        this.receiveAmount = receiveAmount;
+    }
+
+    public String getWorkingArea() {
+        return workingArea;
+    }
+
+    public void setWorkingArea(String workingArea) {
+        this.workingArea = workingArea;
+    }
+
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }
