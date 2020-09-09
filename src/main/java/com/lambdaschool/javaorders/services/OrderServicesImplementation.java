@@ -35,13 +35,11 @@ public class OrderServicesImplementation implements OrderServices{
     @Override
     public Order save(Order order) {
         Order newOrder = new Order();
-
         if(order.getOrdnum() != 0 )
         {
             findOrderById(order.getOrdnum());
             newOrder.setOrdnum((order.getOrdnum()));
         }
-
         newOrder.setAdvanceamount(order.getAdvanceamount());
         newOrder.setOrdamount(order.getOrdamount());
         newOrder.setOrderdescription(order.getOrderdescription());
@@ -55,9 +53,9 @@ public class OrderServicesImplementation implements OrderServices{
 
             newOrder.getPayments().add(newPayment);
         }
-
         return orderrepos.save(newOrder);
     }
+
     @Transactional
     @Override
     public void delete(long ordernum) {
