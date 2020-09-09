@@ -36,13 +36,15 @@ public class Order {
   public Order() {}
 
   public Order(
-    double advanceAmount,
     double orderAmount,
+    double advanceAmount,
+    Customer customer,
     String orderDescription
   ) {
     this.advanceAmount = advanceAmount;
     this.orderAmount = orderAmount;
     this.orderDescription = orderDescription;
+    this.customer = customer;
   }
 
   public long getOrderNumber() {

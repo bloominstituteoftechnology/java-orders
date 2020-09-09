@@ -32,10 +32,10 @@ public class Agent {
 
   public Agent(
     String agentName,
+    String workingArea,
     double commission,
-    String country,
     String phone,
-    String workingArea
+    String country
   ) {
     this.agentName = agentName;
     this.commission = commission;

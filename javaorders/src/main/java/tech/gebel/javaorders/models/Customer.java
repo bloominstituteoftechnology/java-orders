@@ -52,17 +52,17 @@ public class Customer {
   public Customer() {}
 
   public Customer(
-    String customerCity,
-    String customerCountry,
     String customerName,
-    double openingAmount,
-    double outstandingAmount,
-    double paymentAmount,
-    double receiveAmount,
+    String customerCity,
     String workingArea,
-    Agent agent,
+    String customerCountry,
     String grade,
-    String phone
+    double openingAmount,
+    double receiveAmount,
+    double paymentAmount,
+    double outstandingAmount,
+    String phone,
+    Agent agent
   ) {
     this.customerCity = customerCity;
     this.customerCountry = customerCountry;
