@@ -10,4 +10,6 @@ public interface OrderServices {
     Order findOrderById(long value);
 
     List<Order> getCustAdvanceAmt(double amount);
+
+    void delete(long ordernum);
 }

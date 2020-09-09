@@ -15,4 +15,8 @@ public interface CustomerServices {
     List<Customer> findCustomerByKeyword(String keyword);
 
     List<OrderCount> findOrderCount();
+
+    Customer update(Customer customer, long custcode);
+
+    void delete(long custcode);
 }
