@@ -94,4 +94,8 @@ public class Order {
   public void setPayments(Set<Payment> payments) {
     this.payments = payments;
   }
+
+  public void addPayments(Payment payment) {
+    payments.add(payment);
+  }
 }
