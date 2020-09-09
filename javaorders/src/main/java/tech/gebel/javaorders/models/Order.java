@@ -1,83 +1,87 @@
 package tech.gebel.javaorders.models;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ordnum")
-    private long orderNumber;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "ordnum")
+  private long orderNumber;
 
-    @Column(name = "advanceamount")
-    private double advanceAmount;
+  @Column(name = "advanceamount")
+  private double advanceAmount;
 
-    @Column(name = "ordamount")
-    private double orderAmount;
+  @Column(name = "ordamount")
+  private double orderAmount;
 
-    @Column(name = "orderdescription", nullable = false)
-    private String orderDescription;
+  @Column(name = "orderdescription", nullable = false)
+  private String orderDescription;
 
-    @ManyToOne
-    @JoinColumn(name = "custcode",
-            nullable = false)
-    private Customer customer;
+  @ManyToOne
+  @JoinColumn(name = "custcode", nullable = false)
+  private Customer customer;
 
-    @ManyToMany
-    @JoinTable(name = "orderspayments",
-            joinColumns = @JoinColumn(name = "ordnum"),
-            inverseJoinColumns = @JoinColumn(name = "paymentid"))
-    Set<Payment> payments = new HashSet<>();
+  @ManyToMany
+  @JoinTable(
+    name = "orderspayments",
+    joinColumns = @JoinColumn(name = "ordnum"),
+    inverseJoinColumns = @JoinColumn(name = "paymentid")
+  )
+  Set<Payment> payments = new HashSet<>();
 
-    public Order() {
-    }
+  public Order() {}
 
-    public Order(double advanceAmount, double orderAmount, String orderDescription) {
-        this.advanceAmount = advanceAmount;
-        this.orderAmount = orderAmount;
-        this.orderDescription = orderDescription;
-    }
+  public Order(
+    double advanceAmount,
+    double orderAmount,
+    String orderDescription
+  ) {
+    this.advanceAmount = advanceAmount;
+    this.orderAmount = orderAmount;
+    this.orderDescription = orderDescription;
+  }
 
-    public long getOrderNumber() {
-        return orderNumber;
-    }
+  public long getOrderNumber() {
+    return orderNumber;
+  }
 
-    public void setOrderNumber(long orderNumber) {
-        this.orderNumber = orderNumber;
-    }
+  public void setOrderNumber(long orderNumber) {
+    this.orderNumber = orderNumber;
+  }
 
-    public double getAdvanceAmount() {
-        return advanceAmount;
-    }
+  public double getAdvanceAmount() {
+    return advanceAmount;
+  }
 
-    public void setAdvanceAmount(double advanceAmount) {
-        this.advanceAmount = advanceAmount;
-    }
+  public void setAdvanceAmount(double advanceAmount) {
+    this.advanceAmount = advanceAmount;
+  }
 
-    public double getOrderAmount() {
-        return orderAmount;
-    }
+  public double getOrderAmount() {
+    return orderAmount;
+  }
 
-    public void setOrderAmount(double orderAmount) {
-        this.orderAmount = orderAmount;
-    }
+  public void setOrderAmount(double orderAmount) {
+    this.orderAmount = orderAmount;
+  }
 
-    public String getOrderDescription() {
-        return orderDescription;
-    }
+  public String getOrderDescription() {
+    return orderDescription;
+  }
 
-    public void setOrderDescription(String orderDescription) {
-        this.orderDescription = orderDescription;
-    }
+  public void setOrderDescription(String orderDescription) {
+    this.orderDescription = orderDescription;
+  }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+  public Customer getCustomer() {
+    return customer;
+  }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
+  }
 }
