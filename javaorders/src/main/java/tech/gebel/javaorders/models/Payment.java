@@ -1,6 +1,8 @@
 package tech.gebel.javaorders.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "payments")
@@ -12,6 +14,9 @@ public class Payment {
 
     @Column(nullable = false, unique = true)
     private String type;
+
+    @ManyToMany(mappedBy = "payments")
+    Set<Order> orders = new HashSet<>();
 
     public Payment() {
     }
