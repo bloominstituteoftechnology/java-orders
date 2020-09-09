@@ -16,7 +16,7 @@ public class Order {
     @Column(name = "ordamount")
     private double orderAmount;
 
-    @Column(name = "orderdescription")
+    @Column(name = "orderdescription", nullable = false)
     private String orderDescription;
 
     @ManyToOne
