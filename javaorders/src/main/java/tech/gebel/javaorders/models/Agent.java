@@ -9,17 +9,17 @@ import javax.persistence.*;
 public class Agent {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "agentcode")
+  @Column(name = "agentcode", nullable = false)
   private long agentCode;
 
-  @Column(name = "agentname", nullable = false)
+  @Column(name = "agentname")
   private String agentName;
 
   @Column(name = "workingarea")
   private String workingArea;
 
   @OneToMany(
-    mappedBy = "agents",
+    mappedBy = "agent",
     cascade = CascadeType.ALL,
     orphanRemoval = true
   )

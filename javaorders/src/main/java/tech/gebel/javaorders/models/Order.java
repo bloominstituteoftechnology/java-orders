@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Order {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "ordnum")
+  @Column(name = "ordnum", nullable = false)
   private long orderNumber;
 
   @Column(name = "advanceamount")
