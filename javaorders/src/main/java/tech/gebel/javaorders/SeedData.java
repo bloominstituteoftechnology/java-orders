@@ -35,14 +35,19 @@ public class SeedData implements CommandLineRunner {
    */
   private final PaymentsRepository paymentrepos;
 
-    public SeedData(CustomersRepository custrepos, AgentsRepository agentrepos, OrdersRepository ordersrepos, PaymentsRepository paymentrepos) {
-        this.custrepos = custrepos;
-        this.agentrepos = agentrepos;
-        this.ordersrepos = ordersrepos;
-        this.paymentrepos = paymentrepos;
-    }
+  public SeedData(
+    CustomersRepository custrepos,
+    AgentsRepository agentrepos,
+    OrdersRepository ordersrepos,
+    PaymentsRepository paymentrepos
+  ) {
+    this.custrepos = custrepos;
+    this.agentrepos = agentrepos;
+    this.ordersrepos = ordersrepos;
+    this.paymentrepos = paymentrepos;
+  }
 
-    /**
+  /**
    * Generates test, seed data for our application
    * First a set of known data is seeded into our database.
    * Second a random set of data using Java Faker is seeded into our database.
