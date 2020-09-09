@@ -10,7 +10,7 @@ public interface CustomerServices {
 
     List<Customer> findAllCustomerOrders();
 
-    Customer findCustomerById(long customerId);
+    Customer findCustomerByID(long customerID);
 
     List<Customer> findCustomerByKeyword(String keyword);
 

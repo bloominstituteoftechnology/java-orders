@@ -29,18 +29,18 @@ public class CustomerController {
         return new ResponseEntity<>(orderList, HttpStatus.OK);
     }
 
-    // http://localhost:2019/customers/customer/7
-    // http://localhost:2019/customers/customer/77
-    @GetMapping(value = "customer/{customerId}", produces = "application/json")
-    public ResponseEntity<?> findCustomerById(@PathVariable long customerId)
+//     http://localhost:2019/customers/customer/7
+//     http://localhost:2019/customers/customer/77
+    @GetMapping(value = "/customer/{customerID}", produces = "application/json")
+    public ResponseEntity<?> findCustomerByID(@PathVariable long customerID)
     {
-        Customer customer = customerServices.findCustomerById(customerId);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        Customer c = customerServices.findCustomerByID(customerID);
+        return new ResponseEntity<>(c, HttpStatus.OK);
     }
 
     // http://localhost:2019/customers/namelike/mes
     // http://localhost:2019/customers/namelike/cin
-    @GetMapping(value = "customer/{keyword}", produces = "application/json")
+    @GetMapping(value = "/namelike/{keyword}", produces = "application/json")
     public ResponseEntity<?> findCustomerByName(@PathVariable String keyword)
     {
         List<Customer> customer = customerServices.findCustomerByKeyword(keyword);

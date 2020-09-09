@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -27,4 +29,10 @@ public class OrderController {
 
     // Stretch Goals
     // http://localhost:2019/orders/advanceamount
+    @GetMapping(value = "/advanceamount/{amount}", produces = "application/json")
+    public ResponseEntity<?> getCustAdvanceAmt(@PathVariable double amount)
+    {
+        List<Order> list = orderServices.getCustAdvanceAmt(amount);
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 }

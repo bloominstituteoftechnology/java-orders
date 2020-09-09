@@ -23,15 +23,15 @@ public class CustomerServicesImplementation implements CustomerServices{
     }
 
     @Override
-    public Customer findCustomerById(long customerId) {
-        return customerrepos.findById(customerId)
-                .orElseThrow(() -> new EntityNotFoundException("Customer " + customerId + " not found"));
+    public Customer findCustomerByID(long customerID) {
+        return customerrepos.findById(customerID)
+                .orElseThrow(() -> new EntityNotFoundException("Customer " + customerID + " not found"));
     }
 
     @Override
     public List<Customer> findCustomerByKeyword(String keyword) {
-        List<Customer> customer = customerrepos.findByCustnameContainingIgnoringCase(keyword);
-        return customer;
+        List<Customer> list = customerrepos.findByCustnameContainingIgnoringCase(keyword);
+        return list;
     }
 
     @Override

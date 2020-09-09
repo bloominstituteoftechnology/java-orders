@@ -8,4 +8,6 @@ public interface OrderServices {
     Order save(Order order);
 
     Order findOrderById(long value);
+
+    List<Order> getCustAdvanceAmt(double amount);
 }
