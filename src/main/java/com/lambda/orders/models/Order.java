@@ -85,4 +85,8 @@ public class Order
     {
         this.orderdescription = orderdescription;
     }
+
+    public void addPayment(Payment payment) {
+        payments.add(payment);
+    }
 }
