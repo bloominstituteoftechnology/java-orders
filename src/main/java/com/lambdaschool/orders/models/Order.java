@@ -1,43 +1,29 @@
 package com.lambdaschool.orders.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "orders")
-public class Orders
+public class Order
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long orderid;
 
-    @Column(unique = true,
-        nullable = false)
+    @Column(nullable = false)
     private Long ordnum;
 
-    private Double ordamount;
+    private double ordamount;
 
-    private Double advanceamount;
+    private double advanceamount;
 
-    @Column(unique = true,
-        nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "customerid", nullable = false)
+    Customer customer;
     private Long custcode;
 
     private String orderdescription;
-
-    @OneToMany(mappedBy = "order",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
-    List<Customer> customers = new ArrayList<>();
-
-    @ManyToMany()
-    @JoinTable(name = "orderspayments",
-        joinColumns = @JoinColumn(name = "orderid"),
-        inverseJoinColumns = @JoinColumn(name = "paymentid"))
-    Set<Payment> payments = new HashSet<>();
 
     public Order()
     {
@@ -115,23 +101,5 @@ public class Orders
     public void setOrderdescription(String orderdescription)
     {
         this.orderdescription = orderdescription;
-    }
-
-    public List<Customer> getCustomers() {
-            return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-            this.customers = customers;
-    }
-
-    public Set<Payment> getPayments()
-    {
-        return payments;
-    }
-
-    public void setPayments(Set<Payment> payments)
-    {
-        this.payments = payments;
     }
 }
