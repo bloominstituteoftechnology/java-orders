@@ -1,6 +1,8 @@
 package com.aldair.orders.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "agents")
@@ -9,11 +11,15 @@ public class Agent {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long agentid;
 
+    @Column(nullable = false)
     private String name;
     private double commission;
     private String country;
     private String phone;
     private String workingarea;
+
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Customer> customerList = new ArrayList<>();
 
     public Agent() {
         // default jpa constructor
