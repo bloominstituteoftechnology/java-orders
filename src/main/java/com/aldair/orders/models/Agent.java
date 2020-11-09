@@ -80,4 +80,12 @@ public class Agent {
     public void setWorkingarea(String workingarea) {
         this.workingarea = workingarea;
     }
+
+    public List<Customer> getCustomerList() {
+        return customerList;
+    }
+
+    public void setCustomerList(List<Customer> customerList) {
+        this.customerList = customerList;
+    }
 }

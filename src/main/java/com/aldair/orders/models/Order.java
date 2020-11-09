@@ -1,6 +1,8 @@
 package com.aldair.orders.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Order {
@@ -16,6 +18,12 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "customerid", nullable = false)
     private Customer customer;
+
+    @ManyToMany
+    @JoinTable(name = "orderpayemnts",
+            joinColumns = @JoinColumn(name = "orderid"),
+            inverseJoinColumns = @JoinColumn(name = "paymentid"))
+    private Set<Payment> payments = new HashSet<>();
 
     public Order() {
         // default jpa constructor
@@ -75,5 +83,13 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Set<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(Set<Payment> payments) {
+        this.payments = payments;
     }
 }

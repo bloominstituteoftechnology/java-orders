@@ -1,5 +1,7 @@
 package com.aldair.orders.services;
 
-public interface AgentService {
+import com.aldair.orders.models.Agent;
 
+public interface AgentService {
+    Agent save(Agent agent);
 }
