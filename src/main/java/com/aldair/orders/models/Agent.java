@@ -11,8 +11,7 @@ public class Agent {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long agentid;
 
-    @Column(nullable = false)
-    private String name;
+    private String agentname;
     private double commission;
     private String country;
     private String phone;
@@ -25,8 +24,8 @@ public class Agent {
         // default jpa constructor
     }
 
-    public Agent(String name, double commission, String country, String phone, String workingarea) {
-        this.name = name;
+    public Agent(String agentname, double commission, String country, String phone, String workingarea) {
+        this.agentname = agentname;
         this.commission = commission;
         this.country = country;
         this.phone = phone;
@@ -41,12 +40,12 @@ public class Agent {
         this.agentid = agentid;
     }
 
-    public String getName() {
-        return name;
+    public String getAgentname() {
+        return agentname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAgentname(String agentname) {
+        this.agentname = agentname;
     }
 
     public double getCommission() {

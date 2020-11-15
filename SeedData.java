@@ -1,3 +1,4 @@
+/*
 package com.lambdaschool.orders;
 
 import com.github.javafaker.Faker;
@@ -23,36 +24,47 @@ import java.util.Set;
 @Component
 public class SeedData
         implements CommandLineRunner {
-    /**
+    */
+/**
      * Connects the customer table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private CustomersRepository custrepos;
 
-    /**
+    */
+/**
      * Connects the agents table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private AgentsRepository agentrepos;
 
-    /**
+    */
+/**
      * Connects the orders table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private OrdersRepository ordersrepos;
 
-    /**
+    */
+/**
      * Connects the payment table to this SeedData method
-     */
+     *//*
+
     @Autowired
     private PaymentRepository paymentrepos;
 
-    /**
+    */
+/**
      * A Random generator is needed to randomly generate faker data.
-     */
+     *//*
+
     private Random random = new Random();
 
-    /**
+    */
+/**
      * Generates test, seed data for our application
      * First a set of known data is seeded into our database.
      * Second a random set of data using Java Faker is seeded into our database.
@@ -60,7 +72,8 @@ public class SeedData
      * prior to running this process, that data remains in the database.
      *
      * @param args The parameter is required by the parent interface but is not used in this process.
-     */
+     *//*
+
     @Transactional
     @Override
     public void run(String[] args) throws
@@ -627,3 +640,4 @@ public class SeedData
         }
     }
 }
+*/

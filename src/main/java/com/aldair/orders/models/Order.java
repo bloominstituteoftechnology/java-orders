@@ -5,15 +5,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long orderid;
 
-    private double advamount;
-    private double orderamount;
-    private String orderdesc;
-    private long customerid;
+    private double advanceamount;
+    private double ordamount;
+    private String orderdescription;
+    private double custcode;
 
     @ManyToOne
     @JoinColumn(name = "customerid", nullable = false)
@@ -29,11 +30,11 @@ public class Order {
         // default jpa constructor
     }
 
-    public Order(double advamount, double orderamount, String orderdesc, long customerid, Customer customer) {
-        this.advamount = advamount;
-        this.orderamount = orderamount;
-        this.orderdesc = orderdesc;
-        this.customerid = customerid;
+    public Order(double advanceamount, double ordamount, String orderdescription, double custcode, Customer customer) {
+        this.advanceamount = advanceamount;
+        this.ordamount = ordamount;
+        this.orderdescription = orderdescription;
+        this.custcode = custcode;
         this.customer = customer;
     }
 
@@ -45,36 +46,36 @@ public class Order {
         this.orderid = orderid;
     }
 
-    public double getAdvamount() {
-        return advamount;
+    public double getAdvanceamount() {
+        return advanceamount;
     }
 
-    public void setAdvamount(double advamount) {
-        this.advamount = advamount;
+    public void setAdvanceamount(double advanceamount) {
+        this.advanceamount = advanceamount;
     }
 
-    public double getOrderamount() {
-        return orderamount;
+    public double getOrdamount() {
+        return ordamount;
     }
 
-    public void setOrderamount(double orderamount) {
-        this.orderamount = orderamount;
+    public void setOrdamount(double ordamount) {
+        this.ordamount = ordamount;
     }
 
-    public String getOrderdesc() {
-        return orderdesc;
+    public String getOrderdescription() {
+        return orderdescription;
     }
 
-    public void setOrderdesc(String orderdesc) {
-        this.orderdesc = orderdesc;
+    public void setOrderdescription(String orderdescription) {
+        this.orderdescription = orderdescription;
     }
 
-    public long getCustomerid() {
-        return customerid;
+    public double getCustcode() {
+        return custcode;
     }
 
-    public void setCustomerid(long customerid) {
-        this.customerid = customerid;
+    public void setCustcode(double custcode) {
+        this.custcode = custcode;
     }
 
     public Customer getCustomer() {

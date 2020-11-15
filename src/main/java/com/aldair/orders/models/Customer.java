@@ -1,5 +1,7 @@
 package com.aldair.orders.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +13,9 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long customerid;
 
-    @Column(nullable = false)
-    private String city;
-    private String country;
-    @Column(nullable = false)
-    private String name;
+    private String custcity;
+    private String custcountry;
+    private String custname;
     private String grade;
     private double openingamt;
     private double outstandingamt;
@@ -23,26 +23,22 @@ public class Customer {
     private String phone;
     private double receiveamt;
     private String workingarea;
-    private long agentid;
 
-    // declare and join relation with agent (many -> one)
     @ManyToOne
     @JoinColumn(name = "agentid", nullable = false)
     private Agent agent;
 
-    // declare and join relation with orders (one -> many)
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orderList = new ArrayList<>();
-
 
     public Customer() {
         // default jpa constructor
     }
 
-    public Customer(String city, String country, String name, String grade, double openingamt, double outstandingamt, double paymentamt, String phone, double receiveamt, String workingarea, long agentid) {
-        this.city = city;
-        this.country = country;
-        this.name = name;
+    public Customer(String custcity, String custcountry, String custname, String grade, double openingamt, double outstandingamt, double paymentamt, String phone, double receiveamt, String workingarea, Agent agent) {
+        this.custcity = custcity;
+        this.custcountry = custcountry;
+        this.custname = custname;
         this.grade = grade;
         this.openingamt = openingamt;
         this.outstandingamt = outstandingamt;
@@ -50,7 +46,7 @@ public class Customer {
         this.phone = phone;
         this.receiveamt = receiveamt;
         this.workingarea = workingarea;
-        this.agentid = agentid;
+        this.agent = agent;
     }
 
     public long getCustomerid() {
@@ -61,28 +57,28 @@ public class Customer {
         this.customerid = customerid;
     }
 
-    public String getCity() {
-        return city;
+    public String getCustcity() {
+        return custcity;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCustcity(String custcity) {
+        this.custcity = custcity;
     }
 
-    public String getCountry() {
-        return country;
+    public String getCustcountry() {
+        return custcountry;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCustcountry(String custcountry) {
+        this.custcountry = custcountry;
     }
 
-    public String getName() {
-        return name;
+    public String getCustname() {
+        return custname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustname(String custname) {
+        this.custname = custname;
     }
 
     public String getGrade() {
@@ -139,14 +135,6 @@ public class Customer {
 
     public void setWorkingarea(String workingarea) {
         this.workingarea = workingarea;
-    }
-
-    public long getAgentid() {
-        return agentid;
-    }
-
-    public void setAgentid(long agentid) {
-        this.agentid = agentid;
     }
 
     public Agent getAgent() {
