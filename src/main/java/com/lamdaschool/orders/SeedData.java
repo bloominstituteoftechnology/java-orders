@@ -21,7 +21,7 @@ import java.util.Set;
 
 @Transactional
 @Component
-public class SeedData<Faker>
+public class SeedData
     implements CommandLineRunner
 {
     @Autowired
@@ -604,6 +604,7 @@ public class SeedData<Faker>
                     .add(newOrder);
             }
 
+            // this actually saves the faker data.
             custrepos.save(fakeCustomer);
         }
     }
