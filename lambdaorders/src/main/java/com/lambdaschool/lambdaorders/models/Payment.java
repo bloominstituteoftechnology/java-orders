@@ -13,6 +13,7 @@ public class Payment
     private long paymentid;
     private String type;
     @Column(nullable = false, unique = true)
+
     @ManyToMany(mappedBy = "payments")
     private Set<Order> orders = new HashSet<>();
 

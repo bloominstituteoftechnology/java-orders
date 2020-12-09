@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="lambdaorders" target="15" />
+      <module name="lambdaorders" target="14" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

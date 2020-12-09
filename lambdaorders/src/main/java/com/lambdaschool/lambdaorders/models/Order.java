@@ -2,6 +2,7 @@ package com.lambdaschool.lambdaorders.models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
