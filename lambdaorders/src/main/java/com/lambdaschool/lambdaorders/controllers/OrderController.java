@@ -1,6 +1,7 @@
 package com.lambdaschool.lambdaorders.controllers;
 
 import com.lambdaschool.lambdaorders.models.Order;
+import com.lambdaschool.lambdaorders.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class OrderController
     @GetMapping(value = "/order/{ordernumber}", produces = "application/json")
     public ResponseEntity<?> getOrderByNumber(@PathVariable long ordernumber)
     {
-        Order o = ordernumber.findOrderById(ordernumber);
+        Order o = orderService.findOrderById(ordernumber);
         return new ResponseEntity<>(o, HttpStatus.OK);
     }
 }
