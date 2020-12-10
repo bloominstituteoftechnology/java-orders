@@ -9,4 +9,9 @@ public interface OrderService
     List<Order>findOrdersWithAdvanceAmount();
 
     Order findOrderById(long id);
+
+//    Order save(Order order);
+//    void delete(long ordername);
+//    Order update(Order order, long ordernum);
+//    void deleteAll();
 }

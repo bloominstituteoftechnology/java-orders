@@ -17,25 +17,26 @@ import java.util.List;
 public class CustomerController
 {
     @Autowired
-    private CustomerService customerSercice;
+    private CustomerService customerService;
+
     @GetMapping(value = "/orders", produces = "application/json")
     public ResponseEntity<?> listAllCustomers()
     {
-        List<Customer> myCustomerList = customerSercice.findAllCustomers();
+        List<Customer> myCustomerList = customerService.findAllCustomers();
         return new ResponseEntity<>(myCustomerList, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/customer/{customerid}", produces = "application/json")
-    public ResponseEntity<?> getCustomerById(@PathVariable long customerid)
+    @GetMapping(value = "/customer/{custid}", produces = "application/json")
+    public ResponseEntity<?> getCustomerByCode(@PathVariable long custid)
     {
-        Customer c = customerSercice.findCustomerById(customerid);
+        Customer c = customerService.findCustomersById(custid);
         return new ResponseEntity<>(c, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/namelike/{customername}", produces = "application/json")
-    public ResponseEntity<?> findCustomerByName(@PathVariable String customername)
+    @GetMapping(value = "/namelike/{custname}", produces = {"application/json"})
+    public ResponseEntity<?> findCustomerByName(@PathVariable String custname)
     {
-        List<Customer> myCustomerList = customerSercice.findByCustomerName(customername);
-        return new ResponseEntity<>(myCustomerList, HttpStatus.OK);
+        List<Customer> c = customerService.findByCustomername(custname);
+        return new ResponseEntity<>(c, HttpStatus.OK);
     }
 }

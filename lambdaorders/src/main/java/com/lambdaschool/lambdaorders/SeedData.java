@@ -1,14 +1,14 @@
 package com.lambdaschool.lambdaorders;
 
-import com.github.javafaker.Faker;
-import com.lambdaschool.orders.models.Agent;
-import com.lambdaschool.orders.models.Customer;
-import com.lambdaschool.orders.models.Order;
-import com.lambdaschool.orders.models.Payment;
-import com.lambdaschool.orders.repositories.AgentsRepository;
-import com.lambdaschool.orders.repositories.CustomersRepository;
-import com.lambdaschool.orders.repositories.OrdersRepository;
-import com.lambdaschool.orders.repositories.PaymentRepository;
+
+import com.lambdaschool.lambdaorders.models.Agent;
+import com.lambdaschool.lambdaorders.models.Customer;
+import com.lambdaschool.lambdaorders.models.Order;
+import com.lambdaschool.lambdaorders.models.Payment;
+import com.lambdaschool.lambdaorders.repositories.AgentRepository;
+import com.lambdaschool.lambdaorders.repositories.CustomerRepository;
+import com.lambdaschool.lambdaorders.repositories.OrderRepository;
+import com.lambdaschool.lambdaorders.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,6 +18,8 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
+import com.github.javafaker.Faker;
+
 
 @Transactional
 @Component
@@ -28,19 +30,19 @@ public class SeedData
      * Connects the customer table to this SeedData method
      */
     @Autowired
-    private CustomersRepository custrepos;
+    private CustomerRepository custrepos;
 
     /**
      * Connects the agents table to this SeedData method
      */
     @Autowired
-    private AgentsRepository agentrepos;
+    private AgentRepository agentrepos;
 
     /**
      * Connects the orders table to this SeedData method
      */
     @Autowired
-    private OrdersRepository ordersrepos;
+    private OrderRepository ordersrepos;
 
     /**
      * Connects the payment table to this SeedData method
