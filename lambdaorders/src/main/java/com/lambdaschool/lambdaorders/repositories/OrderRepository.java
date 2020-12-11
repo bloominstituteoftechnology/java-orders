@@ -9,4 +9,5 @@ public interface OrderRepository extends CrudRepository<Order, Long>
 {
     List<Order> findAllByAdvanceamountGreaterThan(double amount);
 
+    Order findByOrdnum(long ordnum);
 }

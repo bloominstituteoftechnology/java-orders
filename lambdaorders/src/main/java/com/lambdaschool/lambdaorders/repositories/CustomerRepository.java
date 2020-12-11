@@ -11,4 +11,6 @@ public interface CustomerRepository extends CrudRepository<Customer, Long>
     Customer findByCustcode(long custcode);
 
     List<Customer> findByCustnameContainingIgnoringCase(String name);
+
+    void delete();
 }
