@@ -16,7 +16,7 @@ This is a basic database scheme with customers, orders, and sales agents. This J
 
 The table layouts are as follows
 
-![Image of Database Layout](java-orders-db.png)
+![Image of Database Layout](../java-orders-db.png)
 
 * AGENTS
   * AGENTCODE primary key, not null Long
@@ -55,9 +55,9 @@ The table layouts are as follows
   * ORDERNUM foreign key to ORDERS
   * PAYMENTID foreign key to PAYMENTS.
 
-* Customers has a foreign key to Agents (AGENTCODE) this means:
-  * Customers has a Many to One relationship to Agents and
-  * Agents has a One to Many relationship to Customers
+* Customers has a foreign key to Models (AGENTCODE) this means:
+  * Customers has a Many to One relationship to Models and
+  * Models has a One to Many relationship to Customers
 
 * Orders has a foreign key to Customers (CUSTCODE)
   * Orders has a Many to One relationship to Customers and
