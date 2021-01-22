@@ -1,0 +1,21 @@
+package com.lambda.orders.servicers;
+
+import com.lambda.orders.models.Payment;
+import com.lambda.orders.repositories.PaymentsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
+@Service(value = "paymentServices")
+public class PaymentServicesImpl implements PaymentServices{
+
+    @Autowired
+    PaymentsRepository paymentrepos;
+
+    @Transactional
+    @Override
+    public Payment save(Payment payment) {
+        return paymentrepos.save(payment);
+    }
+}
