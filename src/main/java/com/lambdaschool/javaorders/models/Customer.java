@@ -30,6 +30,11 @@ public class Customer
     @Column(nullable = false)
     private Long agentcode;
 
+    @ManyToOne
+    @JoinColumn(name ="agentcode", nullable=false)
+    private Agent agent;
+
+
     public Customer()
     {
     }
@@ -154,5 +159,15 @@ public class Customer
     public void setAgentcode(Long agentcode)
     {
         this.agentcode = agentcode;
+    }
+
+    public Agent getAgent()
+    {
+        return agent;
+    }
+
+    public void setAgent(Agent agent)
+    {
+        this.agent = agent;
     }
 }
