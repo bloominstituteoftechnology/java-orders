@@ -1,6 +1,8 @@
 package com.lambdaschool.javaorders.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="orders")
@@ -18,6 +20,13 @@ public class Order
     private Long custcode;
 
     private String orderdescription;
+
+    // Create Join Table for OrdersPayments
+    @ManyToMany()
+    @JoinTable(name="orderspayments",
+        joinColumns = @JoinColumn(name="ordnum"),
+        inverseJoinColumns = @JoinColumn(name ="paymentid"))
+    private Set<Payment> payments = new HashSet<>();
 
     public Order()
     {
