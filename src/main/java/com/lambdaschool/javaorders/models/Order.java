@@ -16,9 +16,6 @@ public class Order
 
     private double advanceamount;
 
-    @Column(nullable = false)
-    private Long custcode;
-
     private String orderdescription;
 
     // Create Join Table for OrdersPayments
@@ -28,6 +25,10 @@ public class Order
         inverseJoinColumns = @JoinColumn(name ="paymentid"))
     private Set<Payment> payments = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name ="custcode", nullable=false)
+    private Customer customer;
+
     public Order()
     {
     }
@@ -35,12 +36,10 @@ public class Order
     public Order(
         double ordamount,
         double advanceamount,
-        Long custcode,
         String orderdescription)
     {
         this.ordamount = ordamount;
         this.advanceamount = advanceamount;
-        this.custcode = custcode;
         this.orderdescription = orderdescription;
     }
 
@@ -74,16 +73,6 @@ public class Order
         this.advanceamount = advanceamount;
     }
 
-    public Long getCustcode()
-    {
-        return custcode;
-    }
-
-    public void setCustcode(Long custcode)
-    {
-        this.custcode = custcode;
-    }
-
     public String getOrderdescription()
     {
         return orderdescription;
@@ -92,5 +81,25 @@ public class Order
     public void setOrderdescription(String orderdescription)
     {
         this.orderdescription = orderdescription;
+    }
+
+    public Set<Payment> getPayments()
+    {
+        return payments;
+    }
+
+    public void setPayments(Set<Payment> payments)
+    {
+        this.payments = payments;
+    }
+
+    public Customer getCustomer()
+    {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer)
+    {
+        this.customer = customer;
     }
 }

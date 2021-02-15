@@ -60,12 +60,12 @@ public class Agent
         this.agentcode = agentcode;
     }
 
-    public String getName()
+    public String getAgentname()
     {
         return agentname;
     }
 
-    public void setName(String agentname)
+    public void setAgentname(String agentname)
     {
         this.agentname = agentname;
     }
@@ -119,4 +119,5 @@ public class Agent
     {
         this.customers = customers;
     }
+
 }

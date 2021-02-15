@@ -1,6 +1,8 @@
 package com.lambdaschool.javaorders.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="customers")
@@ -13,6 +15,8 @@ public class Customer
     @Column(nullable = false)
     private String custname;
 
+    private String custcity;
+
     private String workingarea;
 
     private String custcountry;
@@ -23,17 +27,23 @@ public class Customer
 
     private double receiveamt;
 
+    private double paymentamt;
+
     private double outstandingamt;
 
     private String phone;
 
-    @Column(nullable = false)
-    private Long agentcode;
+//    @Column(nullable = false)
+//    private Long agentcode;
 
     @ManyToOne
     @JoinColumn(name ="agentcode", nullable=false)
     private Agent agent;
 
+    @OneToMany(mappedBy = "customer",
+        cascade = CascadeType.ALL,
+        orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
 
     public Customer()
     {
@@ -41,24 +51,26 @@ public class Customer
 
     public Customer(
         String custname,
+        String custcity,
         String workingarea,
         String custcountry,
         String grade,
         double openingamt,
         double receiveamt,
+        double paymentamt,
         double outstandingamt,
-        String phone,
-        Long agentcode)
+        String phone)
     {
         this.custname = custname;
+        this.custcity = custcity;
         this.workingarea = workingarea;
         this.custcountry = custcountry;
         this.grade = grade;
         this.openingamt = openingamt;
         this.receiveamt = receiveamt;
+        this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
-        this.agentcode = agentcode;
     }
 
     public long getCustcode()
@@ -79,6 +91,16 @@ public class Customer
     public void setCustname(String custname)
     {
         this.custname = custname;
+    }
+
+    public String getCustcity()
+    {
+        return custcity;
+    }
+
+    public void setCustcity(String custcity)
+    {
+        this.custcity = custcity;
     }
 
     public String getWorkingarea()
@@ -131,6 +153,16 @@ public class Customer
         this.receiveamt = receiveamt;
     }
 
+    public double getPaymentamt()
+    {
+        return paymentamt;
+    }
+
+    public void setPaymentamt(double paymentamt)
+    {
+        this.paymentamt = paymentamt;
+    }
+
     public double getOutstandingamt()
     {
         return outstandingamt;
@@ -151,16 +183,6 @@ public class Customer
         this.phone = phone;
     }
 
-    public Long getAgentcode()
-    {
-        return agentcode;
-    }
-
-    public void setAgentcode(Long agentcode)
-    {
-        this.agentcode = agentcode;
-    }
-
     public Agent getAgent()
     {
         return agent;
@@ -170,4 +192,15 @@ public class Customer
     {
         this.agent = agent;
     }
+
+    public List<Order> getOrders()
+    {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders)
+    {
+        this.orders = orders;
+    }
+
 }
