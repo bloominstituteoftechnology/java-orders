@@ -33,7 +33,6 @@ public class Customer
 
     private String phone;
 
-
     @ManyToOne
     @JoinColumn(name ="agentcode", nullable=false)
     private Agent agent;
