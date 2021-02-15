@@ -33,8 +33,6 @@ public class Customer
 
     private String phone;
 
-//    @Column(nullable = false)
-//    private Long agentcode;
 
     @ManyToOne
     @JoinColumn(name ="agentcode", nullable=false)
@@ -59,7 +57,8 @@ public class Customer
         double receiveamt,
         double paymentamt,
         double outstandingamt,
-        String phone)
+        String phone,
+        Agent agent)
     {
         this.custname = custname;
         this.custcity = custcity;
@@ -71,6 +70,7 @@ public class Customer
         this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
+        this.agent = agent;
     }
 
     public long getCustcode()
