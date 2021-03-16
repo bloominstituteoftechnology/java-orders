@@ -77,7 +77,7 @@ The database will be available from the H2 Console. Each table will contain the 
 
 ### MVP
 
-* [ ] Create the entities needed to store this data.
+* [x] Create the entities needed to store this data.
 * [ ] Seed the database
   * [ ] A data.sql file has been provided with seed data. You can use this class directly or modify it to fit your models. However, the data found in the file is the seed data to use!
   * [ ] A SeedData.java file has been provided seed data. You can use this class directly or modify it to fit your models. However, the data found in the file is the seed data to use!
