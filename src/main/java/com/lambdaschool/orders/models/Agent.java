@@ -1,10 +1,12 @@
 package com.lambdaschool.orders.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="agents")
-public class Agents {
+public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long agentcode;
@@ -14,10 +16,14 @@ public class Agents {
     private String phone;
     private String workingarea;
 
-    public Agents() {
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Customer> customers = new ArrayList<>();
+
+
+    public Agent() {
     }
 
-    public Agents(String agentname, double commision, String country, String phone, String workingarea) {
+    public Agent(String agentname, String country, double commision,  String phone, String workingarea) {
         this.agentname = agentname;
         this.commision = commision;
         this.country = country;
@@ -25,12 +31,12 @@ public class Agents {
         this.workingarea = workingarea;
     }
 
-    public long getAgentid() {
+    public long getAgentcode() {
         return agentcode;
     }
 
-    public void setAgentid(long agentid) {
-        this.agentcode = agentid;
+    public void setAgentcode(long agentcode) {
+        this.agentcode = agentcode;
     }
 
     public String getAgentname() {
@@ -71,5 +77,13 @@ public class Agents {
 
     public void setWorkingarea(String workingarea) {
         this.workingarea = workingarea;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 }

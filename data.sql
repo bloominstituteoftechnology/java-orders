@@ -5,7 +5,7 @@ DELETE
 FROM customers;
 
 DELETE
-FROM agents;
+FROM agent;
 
 INSERT INTO AGENTS (agentcode, agentname, workingarea, commission, phone, country)
 VALUES (1, 'Ramasundar', 'Bangalore', 0.15, '077-25814763', ''),
