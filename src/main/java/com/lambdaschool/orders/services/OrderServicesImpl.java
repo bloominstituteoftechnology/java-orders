@@ -19,4 +19,13 @@ public class OrderServicesImpl implements OrderServices{
         return order;
     }
 
+    @Override
+    public Order save(Order order) {
+        return null;
+    }
+
+    @Override
+    public void delete(long ordnum) {
+
+    }
 }

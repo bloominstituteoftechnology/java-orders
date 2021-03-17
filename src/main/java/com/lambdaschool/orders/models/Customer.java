@@ -17,10 +17,18 @@ public class Customer {
     private String custname;
     private String grade;
     private double openingamt;
+    @Transient
+    public boolean hasvalueopeningamt = false;
     private double outstandingamt;
+    @Transient
+    public boolean hasvalueoutstandingamt = false;
     private double paymentamt;
+    @Transient
+    public boolean hasvaluepaymentamt = false;
     private String phone;
     private double receiveamt;
+    @Transient
+    public boolean hasvaluereceiveamt = false;
     private String workingarea;
 
     @ManyToOne

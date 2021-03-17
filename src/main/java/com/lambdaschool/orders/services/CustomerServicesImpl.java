@@ -80,18 +80,47 @@ public class CustomerServicesImpl implements CustomerServices{
         return customersRepository.save(newCustomer);
     }
 
+    @Transactional
     @Override
     public Customer update(long custcode, Customer customer) {
-        return null;
+        Customer updateCustomer = customersRepository.findById(custcode)
+                .orElseThrow(()-> new EntityNotFoundException("Customer " + custcode + " not found."));
+        if(customer.getCustcity() != null) updateCustomer.setCustcity(customer.getCustcity());
+        if(customer.getCustCountry() != null) updateCustomer.setCustCountry(customer.getCustCountry());
+        if(customer.getCustname() != null) updateCustomer.setCustname(customer.getCustname());
+        if(customer.getGrade() != null) updateCustomer.setGrade(customer.getGrade());
+        if(customer.hasvalueopeningamt) updateCustomer.setOpeningamt(customer.getOpeningamt());
+        if(customer.hasvalueoutstandingamt) updateCustomer.setOutstandingamt(customer.getOutstandingamt());
+        if(customer.hasvaluepaymentamt) updateCustomer.setPaymentamt(customer.getPaymentamt());
+        if(customer.getPhone() != null) updateCustomer.setPhone(customer.getPhone());
+        if(customer.hasvaluereceiveamt) updateCustomer.setReceiveamt(customer.getReceiveamt());
+        if(customer.getWorkingarea() != null) updateCustomer.setWorkingarea(customer.getWorkingarea());
+        if(customer.getAgent() != null) updateCustomer.setAgent(customer.getAgent());
+
+        if(customer.getOrders().size()>0){
+            updateCustomer.getOrders().clear();
+            for(Order o : customer.getOrders()){
+                Order newOrder = new Order();
+                newOrder.setAdvanceamount(o.getAdvanceamount());
+                newOrder.setOrdamount(o.getOrdamount());
+                newOrder.setOrderdescription(o.getOrderdescription());
+
+                newOrder.setCustomer(updateCustomer);
+                updateCustomer.getOrders().add(newOrder);
+            }
+        }
+        return customersRepository.save(updateCustomer);
     }
 
     @Override
     public void delete(long id) {
-
+        customersRepository.findById(id)
+                .orElseThrow(()->new EntityNotFoundException("Customer "+ id + " not found."));
+        customersRepository.deleteById(id);
     }
 
     @Override
     public void deleteAll() {
-
+        customersRepository.deleteAll();
     }
 }
