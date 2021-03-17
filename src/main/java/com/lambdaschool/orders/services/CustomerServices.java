@@ -13,4 +13,15 @@ public interface CustomerServices {
     List<Customer> findCustomerByNameLike(String subname);
 
     List<OrdersCount> getOrdersCount();
+
+    // POST and PUT
+    Customer save(Customer customer);
+
+    //PATCH
+    Customer update(long custcode, Customer customer);
+
+    //DELETE
+    void delete(long id);
+
+    void deleteAll();
 }

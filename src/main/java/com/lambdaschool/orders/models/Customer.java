@@ -142,11 +142,11 @@ public class Customer {
         this.workingarea = workingarea;
     }
 
-    public Agent getAgents() {
+    public Agent getAgent() {
         return agent;
     }
 
-    public void setAgents(Agent agent) {
+    public void setAgent(Agent agent) {
         this.agent = agent;
     }
 
