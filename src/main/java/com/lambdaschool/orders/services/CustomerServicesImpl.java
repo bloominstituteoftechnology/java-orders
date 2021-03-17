@@ -2,6 +2,7 @@ package com.lambdaschool.orders.services;
 
 import com.lambdaschool.orders.models.Customer;
 import com.lambdaschool.orders.repositories.CustomersRepository;
+import com.lambdaschool.orders.views.OrdersCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,5 +36,11 @@ public class CustomerServicesImpl implements CustomerServices{
     public List<Customer> findCustomerByNameLike(String subname) {
         List<Customer> customerList = customersRepository.findByCustnameContainingIgnoringCase(subname);
         return customerList;
+    }
+
+    @Override
+    public List<OrdersCount> getOrdersCount() {
+        List<OrdersCount> ordersCounts = customersRepository.getOrdersCount();
+        return ordersCounts;
     }
 }
