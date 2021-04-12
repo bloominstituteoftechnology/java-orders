@@ -20,7 +20,7 @@ public class Customer
     private String grade;
     private double openingamt;
     private double receiveamt;
-    private double pamentamt;
+    private double paymentamt;
     private double outstandingamt;
     private String phone;
 
@@ -45,7 +45,7 @@ public class Customer
         String grade,
         double openingamt,
         double receiveamt,
-        double pamentamt,
+        double paymentamt,
         double outstandingamt,
         String phone,
         Agent agent)
@@ -57,7 +57,7 @@ public class Customer
         this.grade = grade;
         this.openingamt = openingamt;
         this.receiveamt = receiveamt;
-        this.pamentamt = pamentamt;
+        this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
         this.agent = agent;
@@ -143,14 +143,14 @@ public class Customer
         this.receiveamt = receiveamt;
     }
 
-    public double getPamentamt()
+    public double getPaymentamt()
     {
-        return pamentamt;
+        return paymentamt;
     }
 
-    public void setPamentamt(double pamentamt)
+    public void setPaymentamt(double paymentamt)
     {
-        this.pamentamt = pamentamt;
+        this.paymentamt = paymentamt;
     }
 
     public double getOutstandingamt()
