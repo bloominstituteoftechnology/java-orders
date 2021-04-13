@@ -1,8 +1,6 @@
 package com.lambdaschool.modelorders;
 
 import com.github.javafaker.Faker;
-
-
 import com.lambdaschool.modelorders.models.*;
 import com.lambdaschool.modelorders.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +8,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.util.*;
+
 
 @Transactional
 @Component
@@ -53,7 +53,6 @@ public class SeedData implements CommandLineRunner {
      *
      * @param args The parameter is required by the parent interface but is not used in this process.
      */
-    @Transactional
     @Override
     public void run(String[] args) throws Exception{
         Payment pay1 = new Payment("Cash");
@@ -409,86 +408,86 @@ public class SeedData implements CommandLineRunner {
                               c13,
                               "SOD");
         o01.getPayments()
-                .add(pay1);
+           .add(pay1);
 
         Order o02 = new Order(3000.00,
                               500.00,
                               c19,
                               "SOD");
         o02.getPayments()
-                .add(pay2);
+           .add(pay2);
 
         Order o03 = new Order(4500.00,
                               900.00,
                               c07,
                               "SOD");
         o03.getPayments()
-                .add(pay3);
+           .add(pay3);
         o03.getPayments()
-                .add(pay2);
+           .add(pay2);
 
         Order o04 = new Order(2000.00,
                               0.00,
                               c16,
                               "SOD");
         o04.getPayments()
-                .add(pay4);
+           .add(pay4);
 
         Order o05 = new Order(4000.00,
                               600.00,
                               c22,
                               "SOD");
         o05.getPayments()
-                .add(pay2);
+           .add(pay2);
 
         Order o06 = new Order(2000.00,
                               0.00,
                               c12,
                               "SOD");
         o06.getPayments()
-                .add(pay3);
+           .add(pay3);
 
         Order o07 = new Order(3500.00,
                               2000.00,
                               c02,
                               "SOD");
         o07.getPayments()
-                .add(pay4);
+           .add(pay4);
 
         Order o08 = new Order(2500.00,
                               400.00,
                               c03,
                               "SOD");
         o08.getPayments()
-                .add(pay1);
+           .add(pay1);
 
         Order o09 = new Order(500.00,
                               0.00,
                               c23,
                               "SOD");
         o09.getPayments()
-                .add(pay3);
+           .add(pay3);
 
         Order o10 = new Order(4000.00,
                               700.00,
                               c07,
                               "SOD");
         o10.getPayments()
-                .add(pay4);
+           .add(pay4);
 
         Order o11 = new Order(1500.00,
                               600.00,
                               c08,
                               "SOD");
         o11.getPayments()
-                .add(pay2);
+           .add(pay2);
 
         Order o12 = new Order(2500.00,
                               0.00,
                               c25,
                               "SOD");
         o12.getPayments()
-                .add(pay1);
+           .add(pay1);
 
         agentrepos.save(a01);
         agentrepos.save(a02);
@@ -503,7 +502,7 @@ public class SeedData implements CommandLineRunner {
         agentrepos.save(a11);
         agentrepos.save(a12);
 
-        custrepos.save(c01);
+        custrepos.save(c02);
         custrepos.save(c02);
         custrepos.save(c03);
         custrepos.save(c04);
@@ -555,31 +554,31 @@ public class SeedData implements CommandLineRunner {
         for (String theName : customerNames){
 
             String custcity = dataFaker.address()
-                    .city();
+                                       .city();
             String tempWorkingarea = dataFaker.address()
-                    .cityName();
+                                              .cityName();
             String tempCustcountry = dataFaker.address()
-                    .country();
+                                              .country();
             String tempGrade = dataFaker.country()
-                    .countryCode2();
+                                        .countryCode2();
             double tempOpeningamt = dataFaker.number()
-                    .randomDouble(2,
-                                  0,
-                                  10000);
+                                             .randomDouble(2,
+                                                           0,
+                                                           10000);
             double tempReceiveamt = dataFaker.number()
-                    .randomDouble(2,
-                                  0,
-                                  10000);
+                                             .randomDouble(2,
+                                                           0,
+                                                           10000);
             double tempPaymentamt = dataFaker.number()
-                    .randomDouble(2,
-                                  0,
-                                  10000);
+                                             .randomDouble(2,
+                                                           0,
+                                                           10000);
             double tempOutstandingamt = dataFaker.number()
-                    .randomDouble(2,
-                                  0,
-                                  10000);
+                                                 .randomDouble(2,
+                                                               0,
+                                                               10000);
             String tempPhone = dataFaker.phoneNumber()
-                    .phoneNumber();
+                                        .phoneNumber();
 
             Customer fakeCustomer = new Customer(theName,
                                                  custcity,
@@ -597,15 +596,15 @@ public class SeedData implements CommandLineRunner {
             for (int i = 0; i < randomNumber; i++)
             {
                 double tempGetOrdamount = dataFaker.number()
-                        .randomDouble(2,
-                                      0,
-                                      10000);
+                                                   .randomDouble(2,
+                                                                 0,
+                                                                 10000);
                 double tempGetAdvanceamount = dataFaker.number()
-                        .randomDouble(2,
-                                      0,
-                                      10000);
+                                                       .randomDouble(2,
+                                                                     0,
+                                                                     10000);
                 String tempGetOrderdescription = dataFaker.lorem()
-                        .characters();
+                                                          .characters();
 
                 Order newOrder = new Order(tempGetOrdamount,
                                            tempGetAdvanceamount,
@@ -614,7 +613,7 @@ public class SeedData implements CommandLineRunner {
 
                 newOrder.getPayments().add(pay1);
                 fakeCustomer.getOrders()
-                        .add(newOrder);
+                            .add(newOrder);
 
 
             }

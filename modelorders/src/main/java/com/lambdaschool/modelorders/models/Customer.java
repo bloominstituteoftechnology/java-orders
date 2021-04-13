@@ -1,7 +1,5 @@
 package com.lambdaschool.modelorders.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.util.*;
 
@@ -30,8 +28,10 @@ public class Customer {
   nullable = false)
   private Agent agentcode;
 
-  @ManyToMany(mappedBy = "customers")
-  private Set<Order> orders = new HashSet<>();
+  @OneToMany(mappedBy = "customers",
+      cascade = CascadeType.ALL,
+      orphanRemoval = true)
+  List<Order> orders = new ArrayList<>();
 
   public Customer() {
   }
@@ -157,11 +157,11 @@ public class Customer {
     this.agentcode = agentcode;
   }
 
-  public Set<Order> getOrders() {
+  public List<Order> getOrders() {
     return orders;
   }
 
-  public void setOrders(Set<Order> orders) {
+  public void setOrders(List<Order> orders) {
     this.orders = orders;
   }
 }

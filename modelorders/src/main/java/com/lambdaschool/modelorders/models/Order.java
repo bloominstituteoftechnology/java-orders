@@ -1,9 +1,8 @@
 package com.lambdaschool.modelorders.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
@@ -23,9 +22,10 @@ public class Order {
    Set<Payment> payments = new HashSet<>();
 
   private String orderdescription;
+
   @ManyToOne
   @JoinColumn(name ="custcode", nullable = false)
-  private Customer customers;
+  private Customer customer;
 
   public Order() {
   }
@@ -40,7 +40,7 @@ public class Order {
     this.advanceamount = advanceamount;
     this.orderdescription = orderdescription;
     this.payments = payments;
-    this.customers = customers;
+    this.customer = customers;
   }
 
   public long getOrdnum() {
@@ -76,10 +76,10 @@ public class Order {
   }
 
   public Customer getCustomers() {
-    return customers;
+    return customer;
   }
 
   public void setCustomers(Customer customers) {
-    this.customers = customers;
+    this.customer = customers;
   }
 }
