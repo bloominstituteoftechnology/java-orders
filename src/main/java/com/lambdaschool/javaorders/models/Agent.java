@@ -20,9 +20,10 @@ public class Agent {
     private String phone;
     private String country;
 
-    @OneToMany(mappedBy ="agent",
+    @OneToMany(mappedBy = "agent",
             cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Customer> customers = new ArrayList<>();
+
     public Agent() {
     }
 
@@ -80,5 +81,13 @@ public class Agent {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 }

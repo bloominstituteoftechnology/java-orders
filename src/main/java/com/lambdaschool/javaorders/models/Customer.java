@@ -22,8 +22,11 @@ public class Customer {
 
     @ManyToOne
     @JoinColumn(name = "agentcode",nullable = false)
-    private Agent agent
+    private Agent agent;
 
+    @OneToMany(mappedBy ="customer",
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders= new ArrayList<>();
 
 
 
