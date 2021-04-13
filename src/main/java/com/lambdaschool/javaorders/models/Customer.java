@@ -13,9 +13,11 @@ public class Customer {
     private String custname;
     private String custcity;
     private String workingarea;
+    private String custcountry;
     private String grade;
     private double openingamt;
-    private double recieveamt;
+    private double receiveamt;
+    private double paymentamt;
     private double outstandingamt;
     private String phone;
 
@@ -34,13 +36,15 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String custname, String custcity, String workingarea, String grade, double openingamt, double recieveamt, double outstandingamt, String phone, Agent agent) {
+    public Customer(String custname, String custcity, String workingarea, String custcountry, String grade, double openingamt, double receiveamt, double paymentamt, double outstandingamt, String phone, Agent agent) {
         this.custname = custname;
         this.custcity = custcity;
         this.workingarea = workingarea;
+        this.custcountry = custcountry;
         this.grade = grade;
         this.openingamt = openingamt;
-        this.recieveamt = recieveamt;
+        this.receiveamt = receiveamt;
+        this.paymentamt= paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
         this.agent = agent;
@@ -94,12 +98,12 @@ public class Customer {
         this.openingamt = openingamt;
     }
 
-    public double getRecieveamt() {
-        return recieveamt;
+    public double getReceiveamt() {
+        return receiveamt;
     }
 
-    public void setRecieveamt(double recieveamt) {
-        this.recieveamt = recieveamt;
+    public void setReceiveamt(double recieveamt) {
+        this.receiveamt = recieveamt;
     }
 
     public double getOutstandingamt() {
@@ -124,5 +128,29 @@ public class Customer {
 
     public void setAgent(Agent agent) {
         this.agent = agent;
+    }
+
+    public String getCustcountry() {
+        return custcountry;
+    }
+
+    public void setCustcountry(String custcountry) {
+        this.custcountry = custcountry;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public double getPaymentamt() {
+        return paymentamt;
+    }
+
+    public void setPaymentamt(double paymentamt) {
+        this.paymentamt = paymentamt;
     }
 }

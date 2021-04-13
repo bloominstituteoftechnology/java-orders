@@ -7,46 +7,48 @@ import java.util.Set;
 @Entity
 @Table(name = "orders")
 public class Order {
-    private long ordernum;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long ordnum;
 
-    private double orderamt;
-    private double advanceamt;
+    private double ordamount;
+    private double advanceamount;
     private String orderdescription;
     @ManyToMany()
-    @JoinTable(name = "orderpayments",
-            joinColumns = @JoinColumn(name="ordernum"),
+    @JoinTable(name = "orderspayments",
+            joinColumns = @JoinColumn(name="ordnum"),
             inverseJoinColumns = @JoinColumn(name = "paymentid"))
     private Set<Payment> payments = new HashSet<>();
 
     @ManyToOne
-    @JoinColumn(name = "custcode ", nullable = false)
+    @JoinColumn(name = "custcode", nullable = false)
     private Customer customer;
 
 
     public Order() {
     }
 
-    public Order(double orderamt, double advanceamt, String orderdescription, Customer customer) {
-        this.orderamt = orderamt;
-        this.advanceamt = advanceamt;
+    public Order(double ordamount, double advanceamount, String orderdescription, Customer customer) {
+        this.ordamount = ordamount;
+        this.advanceamount = advanceamount;
         this.orderdescription = orderdescription;
         this.customer = customer;
     }
 
-    public double getOrderamt() {
-        return orderamt;
+    public double getOrdamount() {
+        return ordamount;
     }
 
-    public void setOrderamt(double orderamt) {
-        this.orderamt = orderamt;
+    public void setOrdamount(double orderamt) {
+        this.ordamount = orderamt;
     }
 
-    public double getAdvanceamt() {
-        return advanceamt;
+    public double getAdvanceamount() {
+        return advanceamount;
     }
 
-    public void setAdvanceamt(double advanceamt) {
-        this.advanceamt = advanceamt;
+    public void setAdvanceamount(double advanceamt) {
+        this.advanceamount = advanceamt;
     }
 
     public String getOrderdescription() {
@@ -57,12 +59,12 @@ public class Order {
         this.orderdescription = orderdescription;
     }
 
-    public long getOrdernum() {
-        return ordernum;
+    public long getOrdnum() {
+        return ordnum;
     }
 
-    public void setOrdernum(long ordernum) {
-        this.ordernum = ordernum;
+    public void setOrdnum(long ordernum) {
+        this.ordnum = ordernum;
     }
 
     public Set<Payment> getPayments() {
@@ -80,4 +82,7 @@ public class Order {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+
+
 }
