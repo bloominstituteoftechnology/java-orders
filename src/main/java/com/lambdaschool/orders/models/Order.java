@@ -1,5 +1,7 @@
 package com.lambdaschool.orders.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
@@ -20,10 +22,12 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "custcode", nullable = false)
-    private Customer custcode;
+    @JsonIgnoreProperties(value = "orders", allowSetters = true)
+    private Customer customer;
 
     @ManyToMany
-    @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "ordernum"), inverseJoinColumns = @JoinColumn(name = "paymentid"))
+    @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "ordnum"), inverseJoinColumns = @JoinColumn(name = "paymentid"))
+    @JsonIgnoreProperties(value = "orders", allowSetters = true)
     Set<Payment> payments = new HashSet<>();
 
     public Collection<Payment> getPayments() {
@@ -37,12 +41,12 @@ public class Order {
     public Order() {
     }
 
-    public Order(long ordnum, double ordamount, double advanceamount, String orderdescription, Customer custcode) {
+    public Order(long ordnum, double ordamount, double advanceamount, String orderdescription, Customer customer) {
         this.ordnum = ordnum;
         this.ordamount = ordamount;
         this.advanceamount = advanceamount;
         this.orderdescription = orderdescription;
-        this.custcode = custcode;
+        this.customer = customer;
     }
 
     public long getOrdnum() {
@@ -77,11 +81,11 @@ public class Order {
         this.orderdescription = orderdescription;
     }
 
-    public Customer getCustcode() {
-        return custcode;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustcode(Customer custcode) {
-        this.custcode = custcode;
+    public void setCustomer(Customer custcode) {
+        this.customer = custcode;
     }
 }

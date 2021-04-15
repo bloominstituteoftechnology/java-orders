@@ -1,5 +1,7 @@
 package com.lambdaschool.orders.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,27 +22,21 @@ public class Agent {
     private double commission;
     private String country;
     private String phone;
-    private String workingArea;
+    private String workingarea;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties(value = "agent", allowSetters = true)
     private List<Customer> customer = new ArrayList<>();
-
-    public void setCustomer(Collection<Customer> customer) {
-        this.customer = (List<Customer>) customer;
-    }
-
-    public List<Customer> getCustomer() {
-        return customer;
-    }
 
     public Agent() {}
 
-    public Agent(String agentname, double commission, String country, String phone, String workingArea) {
+    public Agent(Long agentcode, String agentname, String workingarea, double commission, String phone, String country ) {
+        this.agentcode = agentcode;
         this.agentname = agentname;
         this.commission = commission;
         this.country = country;
         this.phone = phone;
-        this.workingArea = workingArea;
+        this.workingarea = workingarea;
     }
 
     public long getAgentCode() {
@@ -83,11 +79,19 @@ public class Agent {
         this.phone = phone;
     }
 
-    public String getWorkingArea() {
-        return workingArea;
+    public String getWorkingarea() {
+        return workingarea;
     }
 
-    public void setWorkingArea(String workingArea) {
-        this.workingArea = workingArea;
+    public void setWorkingarea(String workingArea) {
+        this.workingarea = workingArea;
+    }
+
+    public void setCustomer(List<Customer> customer) {
+        this.customer = customer;
+    }
+
+    public List<Customer> getCustomer() {
+        return customer;
     }
 }
